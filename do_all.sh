@@ -26,8 +26,11 @@
 ./fftw.sh
 ./metis.sh
 ./suitesparse.sh
+./eigen.sh
 
 # -- Build Boost
 ./boost.sh
 
-
+# -- Build Trilinos and deal.II
+./trilinos.sh
+./dealii.sh
