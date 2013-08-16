@@ -4,13 +4,13 @@
 # http://trilinos.sandia.gov/
 
 DIRNAME=trilinos-11.4.1-Source
-TARBALL=$DIRNAME.tar.bz
-URL=http://trilinos.sandia.gov/download/files/
+TARBALL=$DIRNAME.tar.bz2
+URL=http://trilinos.sandia.gov/download/files/$TARBALL
 
 source $HOME/pkg/configs/helper.sh
 set_stage
 wgetl $URL
-tar -xzf $TARBALL
+tar -xjf $TARBALL
 cd $DIRNAME
 
 # Build shared libraries

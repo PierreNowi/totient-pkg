@@ -22,6 +22,9 @@ LAPACK = $PREFIX/lib/liblapack.a
 METIS = $PREFIX/lib/libmetis.a
 # ============ Added variables =====================
 EOF
+mkdir -p metis-4.0/Lib
+cp $PREFIX/lib/libmetis.a metis-4.0/Lib
+echo "all:" > metis-4.0/Lib/Makefile
 make
 make install
 leave_stage
