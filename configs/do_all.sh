@@ -27,6 +27,7 @@
 ./metis.sh
 ./suitesparse.sh
 ./eigen.sh
+./armadillo.sh
 
 # -- Build Boost
 ./boost.sh
