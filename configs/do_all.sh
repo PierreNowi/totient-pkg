@@ -15,9 +15,11 @@
 # -- Build valgrind
 ./valgrind.sh
 
-# -- For when we eventually want to rebuild GCC
+# -- For building a current version of GCC
 ./gmp.sh
 ./mpfr.sh
+./mpc.sh
+./gcc.sh
 
 # -- Set up some numerical libraries
 ./openblas.sh
