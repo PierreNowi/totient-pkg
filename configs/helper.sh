@@ -1,8 +1,16 @@
 #!/bin/sh
 
-PREFIX=$HOME/local
-STAGING=/tmp/dsb253-build
+# Install in my own subdir
+#PREFIX=$HOME/local
 
+# Install under cs-instructional with appropriate group
+PREFIX=/share/cs-instructional/cs5220/local
+group=en-cc-c4-cs-instructional
+if [ $(id -gn) != $group ]; then
+  exec sg $group "$0 $*"
+fi
+
+STAGING=/tmp/dsb253-build
 #
 # Set up and clear out staging area
 #
