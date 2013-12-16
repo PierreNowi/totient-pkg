@@ -31,9 +31,18 @@
 ./eigen.sh
 ./armadillo.sh
 
+# -- Build profilers and the like
+./papi.sh
+./pdt.sh
+./tau.sh
+
 # -- Build Boost
 ./boost.sh
 
-# -- Build Trilinos and deal.II
+# -- Build Trilinos, PETSc, and deal.II
 ./trilinos.sh
+./petsc.sh
 ./dealii.sh
+
+# -- Build Julia
+./julia.sh

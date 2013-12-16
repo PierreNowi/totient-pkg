@@ -3,7 +3,7 @@
 # LAPACK -- LAPACK library
 # http://www.netlib.org/lapack/
 
-DIRNAME=lapack-3.4.2
+DIRNAME=lapack-3.5.0
 TARBALL=$DIRNAME.tgz
 URL=http://www.netlib.org/lapack/$TARBALL
 
@@ -18,7 +18,6 @@ mkdir build_shared
 cd build_shared
 cmake \
   -D CMAKE_INSTALL_PREFIX=$PREFIX /
-  -D BUILD_SHARED_LIBS=ON \
   -D USE_OPTIMIZED_BLAS=ON \
   -D LAPACKE=ON \
   ..
@@ -31,6 +30,7 @@ mkdir build_static
 cd build_static
 cmake \
   -D CMAKE_INSTALL_PREFIX=$PREFIX \
+  -D BUILD_SHARED_LIBS=ON \
   -D USE_OPTIMIZED_BLAS=ON \
   -D LAPACKE=ON \
   ..
