@@ -3,7 +3,7 @@
 # Valgrind -- memory debugger and instrumentation
 # http://valgrind.org/
 
-DIRNAME=valgrind-3.8.1
+DIRNAME=valgrind-3.9.0
 TARBALL=$DIRNAME.tar.bz2
 URL=http://valgrind.org/downloads/$TARBALL
 

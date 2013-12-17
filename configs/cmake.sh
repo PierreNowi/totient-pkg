@@ -3,7 +3,7 @@
 # CMake
 # http://www.cmake.org/
 
-DIRNAME=cmake-2.8.11.2
+DIRNAME=cmake-2.8.12.1
 TARBALL=$DIRNAME.tar.gz
 URL=http://www.cmake.org/files/v2.8/$TARBALL
 
@@ -12,7 +12,7 @@ set_stage
 wgetl $URL
 tar -xzf $TARBALL
 cd $DIRNAME
-./configure --prefix=$PREFIX
+./bootstrap --prefix=$PREFIX
 make
 make install
 leave_stage 

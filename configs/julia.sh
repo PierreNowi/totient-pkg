@@ -10,7 +10,7 @@ set_stage
 git clone $URL
 cd $DIRNAME
 BUILDOPTS="VERBOSE=1 USE_BLAS64=0 "
-for lib in BLAS LAPACK GMP MPFR; do
+for lib in BLAS LAPACK ; do
   BUILDOPTS="$BUILDOPTS USE_SYSTEM_$lib=1"
 done
 make $BUILDOPTS PREFIX=$PREFIX install

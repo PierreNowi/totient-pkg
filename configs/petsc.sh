@@ -12,7 +12,7 @@ wgetl $URL
 tar -xzf $TARBALL
 cd $DIRNAME
 ./configure \
-	--with-mpi-dir=/usr/lib64/openmpi/bin/ \
+	--with-mpi-dir=/usr/lib64/openmpi/ \
 	--prefix=$PREFIX/$DIRNAME
 make all test install
 leave_stage

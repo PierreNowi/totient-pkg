@@ -3,7 +3,7 @@
 # GMP -- GNU Multiprecision Library
 # http://gmplib.org/
 
-DIRNAME=gmp-5.1.2
+DIRNAME=gmp-5.1.3
 TARBALL=$DIRNAME.tar.bz2
 URL=ftp://ftp.gnu.org/gnu/gmp/$TARBALL
 

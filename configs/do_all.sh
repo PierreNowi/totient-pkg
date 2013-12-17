@@ -40,8 +40,8 @@
 ./boost.sh
 
 # -- Build Trilinos, PETSc, and deal.II
-./trilinos.sh
 ./petsc.sh
+./trilinos.sh
 ./dealii.sh
 
 # -- Build Julia
