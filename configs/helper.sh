@@ -11,6 +11,7 @@ if [ $(id -gn) != $group ]; then
 fi
 
 STAGING=/tmp/dsb253-build
+#STAGING=$HOME/tmp/dsb253-build
 #
 # Set up and clear out staging area
 #

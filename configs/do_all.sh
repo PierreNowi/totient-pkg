@@ -21,6 +21,10 @@
 ./mpc.sh
 ./gcc.sh
 
+# -- For building LLVM and CLang
+./libedit.sh
+./llvm.sh
+
 # -- Set up some numerical libraries
 ./openblas.sh
 ./lapack.sh
@@ -44,5 +48,7 @@
 ./trilinos.sh
 ./dealii.sh
 
-# -- Build Julia
+# -- Build Julia, UPC, and ISPC
 ./julia.sh
+./upc.sh
+./ispc.sh
