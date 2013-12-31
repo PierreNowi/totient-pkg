@@ -13,8 +13,9 @@ tar -xzf $TARBALL
 cd $DIRNAME
 ./configure -prefix=$PREFIX/tau -c++=g++ -cc=gcc -fortran=gnu \
 	-pdt=$PREFIX/pdt -papi=$PREFIX \
+	-dyninst=$PREFIX \
 	-mpi -mpiinc=/usr/include/openmpi-x86_64/ \
-        -mpilib=/usr/lib64/openmpi/ \
+        -mpilib=/usr/lib64/openmpi/lib \
 	-openmp -pthread
 make install
 leave_stage

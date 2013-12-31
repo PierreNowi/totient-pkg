@@ -17,6 +17,7 @@ popd
 
 pushd llvm/tools/clang/tools
 svn co $URL/clang-tools-extra/trunk extra
+svn co $URL/polly/trunk polly
 popd
 
 pushd llvm/projects
@@ -29,7 +30,7 @@ cd build
 
 CC=gcc-4.8 CXX=g++-4.8 cmake .. \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
-  -DLLVM_BUILD_CXX11=ON \
+  -DLLVM_ENABLE_CXX11=ON \
   -DPYTHON_LIBRARY=$PREFIX/anaconda/lib/libpython2.7.so 
 
 make

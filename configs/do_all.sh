@@ -36,6 +36,8 @@
 ./armadillo.sh
 
 # -- Build profilers and the like
+./libdwarf.sh
+./dyninst.sh
 ./papi.sh
 ./pdt.sh
 ./tau.sh
@@ -43,8 +45,12 @@
 # -- Build Boost
 ./boost.sh
 
-# -- Build Trilinos, PETSc, and deal.II
+# -- Build PETSc, SLEPc, and TAO
 ./petsc.sh
+./slepc.sh
+./tao.sh
+
+# -- Build Trilinos and deal.II
 ./trilinos.sh
 ./dealii.sh
 

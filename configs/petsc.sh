@@ -13,6 +13,7 @@ tar -xzf $TARBALL
 cd $DIRNAME
 ./configure \
 	--with-mpi-dir=/usr/lib64/openmpi/ \
+	--with-shared-libraries \
 	--prefix=$PREFIX/$DIRNAME
 make all test install
 leave_stage
