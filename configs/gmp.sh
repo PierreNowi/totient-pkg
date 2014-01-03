@@ -12,7 +12,7 @@ set_stage
 wgetl $URL
 tar -xjf $TARBALL
 cd $DIRNAME
-./configure --prefix=$PREFIX
+./configure --prefix=$PREFIX --enable-cxx
 make
 make install
 leave_stage

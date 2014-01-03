@@ -1,11 +1,10 @@
 #!/bin/sh
 #
-# Valgrind -- memory debugger and instrumentation
-# http://valgrind.org/
+# SLEPc
 
-DIRNAME=valgrind-3.9.0
+DIRNAME=openmpi-1.6.5
 TARBALL=$DIRNAME.tar.bz2
-URL=http://valgrind.org/downloads/$TARBALL
+URL=http://www.open-mpi.org/software/ompi/v1.6/downloads/$TARBALL
 
 source $HOME/pkg/configs/helper.sh
 set_stage

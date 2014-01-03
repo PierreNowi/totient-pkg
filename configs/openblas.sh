@@ -11,7 +11,7 @@ set_stage
 git clone $URL
 cd OpenBLAS
 make
-make install PREFIX=$PREFIX
-cp $PREFIX/lib/libopenblas.a  $PREFIX/lib/libblas.a
-cp $PREFIX/lib/libopenblas.so $PREFIX/lib/libblas.so
+make install PREFIX=$PREFIX/$DIRNAME
+ln -s $PREFIX/$DIRNAME/lib/libopenblas.a  $PREFIX/$DIRNAME/lib/libblas.a
+ln -s $PREFIX/$DIRNAME/lib/libopenblas.so $PREFIX/$DIRNAME/lib/libblas.so
 leave_stage

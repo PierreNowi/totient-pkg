@@ -24,6 +24,6 @@ cd build
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
   -D FFTW_LIBRARIES="-lfftw3" ..
 make
-# make install
+make install
 
-# leave_stage
+leave_stage

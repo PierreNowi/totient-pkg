@@ -17,7 +17,7 @@ cd $DIRNAME
 mkdir build_shared
 cd build_shared
 cmake \
-  -D CMAKE_INSTALL_PREFIX=$PREFIX /
+  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME \
   -D USE_OPTIMIZED_BLAS=ON \
   -D LAPACKE=ON \
   ..
@@ -29,7 +29,7 @@ cd ..
 mkdir build_static
 cd build_static
 cmake \
-  -D CMAKE_INSTALL_PREFIX=$PREFIX \
+  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME \
   -D BUILD_SHARED_LIBS=ON \
   -D USE_OPTIMIZED_BLAS=ON \
   -D LAPACKE=ON \

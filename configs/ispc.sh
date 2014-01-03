@@ -2,14 +2,14 @@
 #
 # Intel SPMD Program Compiler (ISPC)
 
-
 source $HOME/pkg/configs/helper.sh
 set_stage
 
 git clone https://github.com/ispc/ispc.git ispc
 cd ispc
 
+module load llvm
 make
-cp ispc $PREFIX/bin
+cp ispc $PREFIX/llvm/bin
 
 leave_stage

@@ -28,8 +28,9 @@ cd llvm
 mkdir build
 cd build
 
-CC=gcc-4.8 CXX=g++-4.8 cmake .. \
-  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+#CC=gcc-4.8 CXX=g++-4.8 
+cmake .. \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX/llvm \
   -DLLVM_ENABLE_CXX11=ON \
   -DPYTHON_LIBRARY=$PREFIX/anaconda/lib/libpython2.7.so 
 

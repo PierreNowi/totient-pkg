@@ -12,7 +12,7 @@ wgetl $URL
 tar -xzf $TARBALL
 cd $DIRNAME
 ./configure \
-	--with-mpi-dir=/usr/lib64/openmpi/ \
+	--with-mpi-dir=/share/cs-instructional/cs5220/local/openmpi-1.6.5/ \
 	--with-shared-libraries \
 	--prefix=$PREFIX/$DIRNAME
 make all test install

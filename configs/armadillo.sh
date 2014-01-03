@@ -3,7 +3,7 @@
 # Armadillo C++ matrix library
 # http://arma.sourceforge.net/
 
-DIRNAME=armadillo-3.910.0
+DIRNAME=armadillo-3.930.0
 TARBALL=$DIRNAME.tar.gz
 URL=http://downloads.sourceforge.net/project/arma/$TARBALL
 
