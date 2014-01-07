@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Intel SPMD Program Compiler (ISPC)
 

@@ -9,10 +9,15 @@
 ./doxygen.sh
 ./curl.sh
 
+# -- Most recent autoconf/automake/libtool
+./libtool.sh
+./autoconf.sh
+./automake.sh
+
 # -- CMake
 ./cmake.sh 
 
-# -- Build valgrind (module)
+# -- Build valgrind
 ./valgrind.sh
 
 # -- For building current GCC and CLang
@@ -25,23 +30,15 @@
 
 # -- GCC 4.8.2 (module)
 ./gcc.sh
-module load gcc-4.8.2
-
-# -- For building LLVM and CLang (module)
-./llvm.sh
-./ispc.sh
 
 # -- OpenMPI 1.6.5 (module)
 ./openmpi.sh
-module load openmpi-1.6.5
 
 # -- OpenBLAS (module)
 ./openblas.sh
-module load openblas
 
 # -- LAPACK (module)
 ./lapack.sh
-module load lapack-3.5.0
 
 # -- SPRNG (module)
 ./sprng.sh
@@ -63,12 +60,28 @@ module load lapack-3.5.0
 ./dyninst.sh
 ./papi.sh
 
+# -- HDF5 library
+./hdf5
+
 # -- PDT and TAU (module)
 ./pdt.sh
 ./tau.sh
 
 # -- gperftools (module)
 ./gperftools.sh
+
+# -- IPM (module)
+./ipm.sh
+
+# -- For building LLVM and CLang (module)
+./llvm.sh
+./ispc.sh
+
+# -- Build Julia (module)
+./julia.sh
+
+# -- Build UPC (module)
+./upc.sh
 
 # -- Numerical frameworks (modules)
 ./petsc.sh
@@ -80,8 +93,3 @@ module load lapack-3.5.0
 # -- Build deal.II (module)
 ./dealii.sh
 
-# -- Build Julia (module)
-./julia.sh
-
-# -- Build UPC (module)
-./upc.sh

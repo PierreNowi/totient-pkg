@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # HDF5 storage system
 # http://www.hdfgroup.org/HDF5/
@@ -14,8 +14,8 @@ tar -xjf $TARBALL
 cd $DIRNAME
 mkdir build
 cd build
-CC=/usr/lib64/openmpi/bin/mpicc \
-../configure --prefix=$PREFIX/hdf5p --enable-parallel
+env
+../configure --prefix=$PREFIX --enable-parallel
 make
 make install
 leave_stage

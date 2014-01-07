@@ -1,0 +1,26 @@
+diff --git configure.ac configure.ac
+index 3bca907..637e038 100644
+--- configure.ac
++++ configure.ac
+@@ -3,7 +3,7 @@ AC_INIT([ipm], [2.0.2], [ipm-dev@nersc.gov])
+ AC_CONFIG_SRCDIR([src/ipm_core.c])
+ 
+ AC_CANONICAL_TARGET
+-AM_INIT_AUTOMAKE([no-dependencies])
++AM_INIT_AUTOMAKE([no-dependencies subdir-objects])
+ dnl AC_CONFIG_MACRO_DIR([m4])
+ 
+ sinclude(m4/ax_mpi.m4)
+diff --git utils/configure.ac utils/configure.ac
+index 2ec3081..848dbb8 100644
+--- utils/configure.ac
++++ utils/configure.ac
+@@ -3,7 +3,7 @@ AC_INIT([ipmparse], [1.0.0], [ipm-dev@nersc.gov])
+ AC_CONFIG_SRCDIR([ipm_parse.cc])
+ 
+ AC_CANONICAL_TARGET
+-AM_INIT_AUTOMAKE
++AM_INIT_AUTOMAKE([subdir-objects])
+ 
+ AC_PROG_CXX
+ 

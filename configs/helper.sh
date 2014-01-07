@@ -1,17 +1,17 @@
-#!/bin/sh
+#!/bin/bash
 
 # Install under cs-instructional with appropriate group
 PREFIX=/share/cs-instructional/cs5220/local
 group=en-cc-c4-cs-instructional
-if [ $(id -gn) != $group ]; then
-  exec sg $group "$0 $*"
-fi
+#if [ $(id -gn) != $group ]; then
+#  exec sg $group "$0 $*"
+#fi
 
 # Staging location
 STAGING=/state/partition1/dsb253_temp
 
 # Environment setup
-source /share/cs-instructional/cs5220/vars.sh
+#source /share/cs-instructional/cs5220/vars.sh
 
 #
 # Set up and clear out staging area
