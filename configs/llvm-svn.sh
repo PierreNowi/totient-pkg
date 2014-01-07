@@ -32,12 +32,11 @@ module unload anaconda
 
 ../configure -prefix=$PREFIX/llvm-svn --enable-cxx11
 
-#cmake .. \
-#  -DCMAKE_INSTALL_PREFIX=$PREFIX/llvm \
-#  -DLLVM_ENABLE_CXX11=ON \
-#  -DPYTHON_LIBRARY=$PREFIX/anaconda/lib/libpython2.7.so 
-
 make
 make install
+
+mkdir -p $PREFIX/llvm-svn-analyzer/
+cp tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer/
+cp tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer/
 
 leave_stage

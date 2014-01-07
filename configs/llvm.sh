@@ -50,4 +50,8 @@ CXX=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/g++ \
 make
 make install
 
+mkdir -p $PREFIX/llvm-$VER-analyzer/
+cp tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer/
+cp tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer/
+
 leave_stage

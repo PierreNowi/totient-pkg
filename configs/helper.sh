@@ -1,17 +1,10 @@
 #!/bin/bash
 
-# Install under cs-instructional with appropriate group
+# Install under cs-instructional 
 PREFIX=/share/cs-instructional/cs5220/local
-group=en-cc-c4-cs-instructional
-#if [ $(id -gn) != $group ]; then
-#  exec sg $group "$0 $*"
-#fi
 
 # Staging location
 STAGING=/state/partition1/dsb253_temp
-
-# Environment setup
-#source /share/cs-instructional/cs5220/vars.sh
 
 #
 # Set up and clear out staging area
@@ -52,4 +45,39 @@ function wgetl () {
     popd
   fi
   cp $HOME/pkg/archives/$TARBALL .
+}
+
+#
+# set_stage_dl URL DIRNAME
+# (second option is optional)
+#
+function set_stage_dl () {
+  TARBALL=`echo $1 | sed 's/^.*\///'`
+
+  # Fetch the repository
+  if echo $TARBALL | grep -q '[.]git$' ; then
+    echo "Fetching git file $1"
+    #git clone $1
+  elif echo $TARBALL | grep -q '[.]gz$' ; then
+    echo "Fetching $TARBALL"
+    #wgetl $TARBALL
+    #mkdir tmp
+    #cd tmp
+    #tar -xzf ../$TARBALL
+  elif echo $TARBALL | grep -q '[.]tgz$' ; then
+    echo "Fetching $TARBALL"
+    #wgetl $TARBALL
+    #tar -xzf ../$TARBALL
+  elif echo $TARBALL | grep -q '[.]bz2$' ; then
+    echo "Fetching $TARBALL"
+    #wgetl $TARBALL
+    #mkdir tmp
+    #cd tmp
+    #tar -xjf ../$TARBALL
+  fi
+
+  # Set the dirname (if not already set)
+  if [ -z $2 ]; then
+    export DIRNAME=`ls`
+  fi
 }
