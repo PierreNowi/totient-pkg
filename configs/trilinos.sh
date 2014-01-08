@@ -3,15 +3,8 @@
 # Trilinos
 # http://trilinos.sandia.gov/
 
-DIRNAME=trilinos-11.4.1-Source
-TARBALL=$DIRNAME.tar.bz2
-URL=http://trilinos.sandia.gov/download/files/$TARBALL
-
 source $HOME/pkg/configs/helper.sh
-set_stage
-wgetl $URL
-tar -xjf $TARBALL
-cd $DIRNAME
+set_stage_dl http://trilinos.sandia.gov/download/files/trilinos-11.4.1-Source.tar.bz2
 
 # Build shared libraries
 mkdir build_shared
@@ -32,4 +25,5 @@ cmake \
 
 make
 make install
+
 leave_stage

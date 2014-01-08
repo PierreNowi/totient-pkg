@@ -3,15 +3,8 @@
 # LAPACK -- LAPACK library
 # http://www.netlib.org/lapack/
 
-DIRNAME=lapack-3.5.0
-TARBALL=$DIRNAME.tgz
-URL=http://www.netlib.org/lapack/$TARBALL
-
 source $HOME/pkg/configs/helper.sh
-set_stage
-wgetl $URL
-tar -xzf $TARBALL
-cd $DIRNAME
+set_stage_dl httpp://www.netlib.org/lapack/lapack-3.5.0.tgz
 
 # Build shared libraries
 mkdir build_shared

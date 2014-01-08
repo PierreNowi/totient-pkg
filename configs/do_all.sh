@@ -55,13 +55,15 @@
 ./armadillo.sh
 ./gsl.sh
 
+# -- HDF5 and NetCDF libraries
+./szip.sh
+./hdf5.sh
+./netcdf.sh
+
 # -- Profilers and the like
 ./libdwarf.sh
 ./dyninst.sh
 ./papi.sh
-
-# -- HDF5 library
-./hdf5
 
 # -- PDT and TAU (module)
 ./pdt.sh

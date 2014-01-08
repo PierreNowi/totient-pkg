@@ -3,15 +3,9 @@
 # SuiteSparse
 # http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 
-DIRNAME=SuiteSparse
-TARBALL=$DIRNAME-4.2.1.tar.gz
-URL=http://www.cise.ufl.edu/research/sparse/SuiteSparse/$TARBALL
-
 source $HOME/pkg/configs/helper.sh
-set_stage
-wgetl $URL
-tar -xzf $TARBALL
-cd $DIRNAME
+set_stage_dl http://www.cise.ufl.edu/research/sparse/SuiteSparse/SuiteSparse-4.2.1.tar.gz
+
 patch -p1 -i $HOME/pkg/patches/suitesparse-metis5.patch
 cat >> SuiteSparse_config/SuiteSparse_config.mk <<EOF
 # ============ Added variables =====================
@@ -27,4 +21,5 @@ cp $PREFIX/lib/libmetis.a metis-4.0/Lib
 echo "all:" > metis-4.0/Lib/Makefile
 make
 make install
+
 leave_stage

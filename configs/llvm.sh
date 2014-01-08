@@ -40,18 +40,11 @@ CC=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/gcc \
 CXX=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/g++ \
 ../configure -prefix=$PREFIX/llvm-$VER --enable-cxx11
 
-#CC=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/gcc \
-#CXX=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/g++ \
-#cmake .. \
-#  -DCMAKE_INSTALL_PREFIX=$PREFIX/llvm-$VER \
-#  -DLLVM_ENABLE_CXX11=ON \
-#  -DPYTHON_LIBRARY=$PREFIX/anaconda/lib/libpython2.7.so 
-
 make
 make install
 
 mkdir -p $PREFIX/llvm-$VER-analyzer/
-cp tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer/
-cp tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer/
+cp -R ../tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer/
+cp -R ../tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer/
 
 leave_stage

@@ -3,15 +3,8 @@
 # deal.II
 # http://www.dealii.org/
 
-DIRNAME=deal.II
-TARBALL=$DIRNAME-8.0.0.tar.gz
-URL=https://dealii.googlecode.com/files/$TARBALL
-
 source $HOME/pkg/configs/helper.sh
-set_stage
-wgetl $URL
-tar -xzf $TARBALL
-cd $DIRNAME
+set_stage_dl https://dealii.googlecode.com/files/deal.II-8.0.0.tar.gz
 
 # Build shared libraries
 mkdir build_shared

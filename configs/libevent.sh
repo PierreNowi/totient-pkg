@@ -1,4 +1,4 @@
-#!/bin/sh
+#/bin/sh
 #
 # livevent -- an event notification library
 # http://libevent.org/

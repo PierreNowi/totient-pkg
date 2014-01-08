@@ -36,7 +36,7 @@ make
 make install
 
 mkdir -p $PREFIX/llvm-svn-analyzer/
-cp tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer/
-cp tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer/
+cp -R ../tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer/
+cp -R ../tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer/
 
 leave_stage

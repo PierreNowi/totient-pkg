@@ -3,15 +3,8 @@
 # Armadillo C++ matrix library
 # http://arma.sourceforge.net/
 
-DIRNAME=armadillo-3.930.0
-TARBALL=$DIRNAME.tar.gz
-URL=http://downloads.sourceforge.net/project/arma/$TARBALL
-
 source $HOME/pkg/configs/helper.sh
-set_stage
-wgetl $URL
-tar -xzf $TARBALL
-cd $DIRNAME
+set_stage_dl http://downloads.sourceforge.net/project/arma/armadillo-3.930.0.tar.gz
 
 # Build shared libraries
 mkdir build
