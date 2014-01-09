@@ -10,7 +10,8 @@ source $HOME/pkg/configs/helper.sh
 set_stage
 git clone $URL
 cd OpenBLAS
-make
+#make
+make TARGET=NEHALEM
 make install PREFIX=$PREFIX/$DIRNAME
 ln -s $PREFIX/$DIRNAME/lib/libopenblas.a  $PREFIX/$DIRNAME/lib/libblas.a
 ln -s $PREFIX/$DIRNAME/lib/libopenblas.so $PREFIX/$DIRNAME/lib/libblas.so
