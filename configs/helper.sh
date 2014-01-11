@@ -4,7 +4,7 @@
 PREFIX=/share/cs-instructional/cs5220/local
 
 # Staging location
-STAGING=/state/partition1/dsb253_temp
+STAGING=/state/partition1/dsb253_temp/staging
 
 #
 # Set up and clear out staging area
