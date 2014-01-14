@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Autoconf
+# Links -- text web browser
 
 source ./helper.sh
 stage_dl_ac http://links.twibright.com/download/links-2.8.tar.bz2 \
