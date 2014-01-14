@@ -1,10 +1,17 @@
 # c4-pkg
 
-This is a set of configuration scripts for maintaining my personal
-software builds on the C4 cluster, with the hopes that I will be able
-to keep things up to date without going completely bonkers.  The
-scripts grab the various packages from the web or a local downloads
-folder, or they clone a git repository, or what have you.  Then the
-configure and build out of `/tmp` and run locally.  The `do_all.sh`
-command runs all the package installs, so I should be able to nuke
-my personal `local` directory and start over if I get into trouble.
+This is a set of configuration scripts for maintaining the software system for
+CS 5220 on the C4 cluster.  The scripts grab packages from the web or from a
+local downloads folder, or clone a repository.  They configure and build out of
+a staging directory, and install into the shared subdirectory.  The basic
+structure is:
+
+* `configs`: configuration scripts for building the packages
+* `script`: common local scripts (separate from external packages)
+* `modules`: module definitions
+
+In addition, there are two auxiliary scratch directories:
+
+* `stamp`: time stamps used to track which packages are built
+* `archives`: saved tarballs (avoid re-downloading)
+
