@@ -38,7 +38,11 @@ cd build
 module unload anaconda
 CC=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/gcc \
 CXX=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/g++ \
-../configure -prefix=$PREFIX/llvm-$VER --enable-cxx11
+CPP=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/cpp \
+../configure -prefix=$PREFIX/llvm-$VER \
+  --with-gcc-toolchain=$PREFIX/gcc-4.8.2 \
+  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-4.8.2/lib64 \
+  --enable-cxx11
 
 make
 make install

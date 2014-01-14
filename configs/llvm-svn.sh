@@ -30,7 +30,10 @@ cd build
 
 module unload anaconda
 
-../configure -prefix=$PREFIX/llvm-svn --enable-cxx11
+../configure -prefix=$PREFIX/llvm-svn \
+  --with-gcc-toolchain=$PREFIX/gcc-4.8.2 \
+  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-4.8.2/lib64 \
+  --enable-cxx11
 
 make
 make install
