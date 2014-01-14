@@ -11,8 +11,8 @@ cat >> SuiteSparse_config/SuiteSparse_config.mk <<EOF
 # ============ Added variables =====================
 INSTALL_LIB = $PREFIX/lib
 INSTALL_INCLUDE = $PREFIX/include
-BLAS = -L$PREFIX/lib -lopenblas
-LAPACK = $PREFIX/lib/liblapack.a
+BLAS = -L$PREFIX/OpenBLAS/lib -lopenblas
+LAPACK = $PREFIX/liblapack-3.5.0/lib/liblapack.a
 METIS = $PREFIX/lib/libmetis.a
 # ============ Added variables =====================
 EOF
