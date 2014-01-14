@@ -2,7 +2,7 @@
 #
 # Julia
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl https://github.com/JuliaLang/julia.git
 
 BUILDOPTS="VERBOSE=1 USE_BLAS64=0 "

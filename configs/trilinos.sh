@@ -3,7 +3,7 @@
 # Trilinos
 # http://trilinos.sandia.gov/
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl http://trilinos.sandia.gov/download/files/trilinos-11.4.1-Source.tar.bz2
 
 # Build shared libraries

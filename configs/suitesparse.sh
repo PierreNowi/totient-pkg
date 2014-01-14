@@ -3,10 +3,10 @@
 # SuiteSparse
 # http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl http://www.cise.ufl.edu/research/sparse/SuiteSparse/SuiteSparse-4.2.1.tar.gz
 
-patch -p1 -i $HOME/pkg/patches/suitesparse-metis5.patch
+patch -p1 -i $C4_PKG/patches/suitesparse-metis5.patch
 cat >> SuiteSparse_config/SuiteSparse_config.mk <<EOF
 # ============ Added variables =====================
 INSTALL_LIB = $PREFIX/lib

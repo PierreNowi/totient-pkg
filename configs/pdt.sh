@@ -2,7 +2,7 @@
 #
 # PDT
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl http://tau.oregon.edu/pdt.tgz
 
 ./configure -prefix=$PREFIX/pdt -GNU

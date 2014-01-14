@@ -1,18 +1,34 @@
 #!/bin/bash
 
 # Install under cs-instructional 
-PREFIX=/share/cs-instructional/cs5220/local
+if [ -z "$PREFIX" ]; then
+  PREFIX=/share/cs-instructional/cs5220/local
+fi
 
 # Staging location
-STAGING=/state/partition1/dsb253_temp/staging
+if [ -z "$STAGING" ]; then
+  STAGING=/state/partition1/dsb253_temp/staging
+fi
+
+# C4-pkg location
+if [ -z "$C4_PKG" ]; then
+  C4_PKG=`pwd`/../
+fi
+
+# Report variable setup
+echo "# ======================="
+echo "PREFIX= $PREFIX"
+echo "STAGING=$STAGING"
+echo "C4_PKG= $C4_PKG"
+echo "# ======================="
 
 #
 # Set up and clear out staging area
 #
 function set_stage() {
-  if [ -f $HOME/pkg/stamp/$0-stamp ] ; then
+  if [ -f $C4_PKG/stamp/$0-stamp ] ; then
     echo "Already built $0.  Kill timestamp to force rebuild"
-    cat $HOME/pkg/stamp/$0-stamp
+    cat $C4_PKG/stamp/$0-stamp
     exit 0
   fi
   echo "Clearing staging area"
@@ -27,8 +43,8 @@ function set_stage() {
 #
 function leave_stage () {
   echo "Marking as done"
-  mkdir -p $HOME/pkg/stamp
-  date > $HOME/pkg/stamp/$0-stamp
+  mkdir -p $C4_PKG/stamp
+  date > $C4_PKG/stamp/$0-stamp
   echo "Leaving staging area"
   popd
   return 0
@@ -40,13 +56,13 @@ function leave_stage () {
 function wgetl () {
   local TARBALL=`echo $1 | sed 's/^.*\///'`
   echo $TARBALL
-  if [ ! -f $HOME/pkg/archives/$TARBALL ]; then
-    mkdir -p $HOME/pkg/archives
-    pushd $HOME/pkg/archives/
+  if [ ! -f $C4_PKG/archives/$TARBALL ]; then
+    mkdir -p $C4_PKG/archives
+    pushd $C4_PKG/archives/
     wget $1
     popd
   fi
-  cp $HOME/pkg/archives/$TARBALL .
+  cp $C4_PKG/archives/$TARBALL .
   return 0
 }
 

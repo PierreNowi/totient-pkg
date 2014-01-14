@@ -19,7 +19,7 @@ DIRNAME=gperftools-2.1
 TARBALL=$DIRNAME.tar.gz
 URL=https://gperftools.googlecode.com/files/$TARBALL
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage
 
 wgetl $UURL

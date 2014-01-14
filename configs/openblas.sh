@@ -6,7 +6,7 @@
 DIRNAME=OpenBLAS
 URL=git://github.com/xianyi/OpenBLAS
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage
 git clone $URL
 cd OpenBLAS

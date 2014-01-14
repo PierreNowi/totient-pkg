@@ -6,7 +6,7 @@ DIRNAME=tao-2.2.0
 TARBALL=$DIRNAME.tar.gz
 URL=http://www.mcs.anl.gov/research/projects/tao/download/$TARBALL
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl $URL
 
 export TAO_DIR=$PWD

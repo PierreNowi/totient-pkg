@@ -3,7 +3,7 @@
 # deal.II
 # http://www.dealii.org/
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl https://dealii.googlecode.com/files/deal.II-8.0.0.tar.gz
 
 # Build shared libraries

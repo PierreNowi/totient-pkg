@@ -4,7 +4,7 @@
 
 DIRNAME=petsc-3.4.3
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.4.3.tar.gz
 
 ./configure \

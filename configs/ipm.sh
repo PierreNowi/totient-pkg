@@ -3,10 +3,10 @@
 # IPM
 # http://ipm-hpc.org
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl https://github.com/nerscadmin/IPM.git
 
-patch -p0 < $HOME/pkg/patches/ipm.patch
+patch -p0 < $C4_PKG/patches/ipm.patch
 libtoolize
 aclocal
 automake --add-missing

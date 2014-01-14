@@ -3,7 +3,7 @@
 # LAPACK -- LAPACK library
 # http://www.netlib.org/lapack/
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl httpp://www.netlib.org/lapack/lapack-3.5.0.tgz
 
 # Build shared libraries

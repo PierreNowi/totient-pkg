@@ -2,7 +2,7 @@
 #
 # Tau
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl http://tau.oregon.edu/tau.tgz
 
 OMPI=/share/cs-instructional/cs5220/local/openmpi-1.6.5/

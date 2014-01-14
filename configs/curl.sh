@@ -3,5 +3,5 @@
 # cURL
 # http://curl.haxx.se
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 stage_dl_ac http://curl.haxx.se/download/curl-7.32.0.tar.bz2

@@ -2,7 +2,7 @@
 #
 # Intel SPMD Program Compiler (ISPC)
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage
 
 git clone https://github.com/ispc/ispc.git ispc

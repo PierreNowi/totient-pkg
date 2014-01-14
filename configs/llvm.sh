@@ -12,7 +12,7 @@ function wget_llvm () {
   mv $1-$VER.src $2
 }
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage
 
 wget_llvm llvm llvm

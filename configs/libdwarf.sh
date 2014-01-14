@@ -3,7 +3,7 @@
 # LibDwarf
 # http://www.prevanders.net/dwarf.html
 
-source $HOME/pkg/configs/helper.sh
+source ./helper.sh
 set_stage_dl http://prevanders.net/libdwarf-20130729.tar.gz
 
 ./configure --enable-shared
