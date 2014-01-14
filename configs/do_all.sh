@@ -73,7 +73,12 @@
 ./gperftools.sh
 
 # -- IPM (module)
+./ploticus.sh
 ./ipm.sh
+
+# -- Links and Lynx browsers (modules)
+./links.sh
+./lynx.sh
 
 # -- For building LLVM and CLang (module)
 ./llvm.sh
