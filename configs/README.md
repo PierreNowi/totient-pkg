@@ -66,6 +66,8 @@ toolchain fairly explicitly if we want to get the correct `libstdc++`
 build picks out the local GCC otherwise.  See the coments to [this
 StackOverflow question](http://stackoverflow.com/questions/10809371/clang-3-2-build-broken-after-building-gcc-4-7).
 
+The development build of LLVM sometimes compiles, but it is not reliable.
+
 ## OpenBLAS
 
 We're working on a heterogeneous cluster, and not all of the nodes
@@ -117,3 +119,4 @@ METIS 4.0
 We don't have infiniband on the cluster, so I've disabled it.  Users
 should default to the UDP transport layer for running across cluster
 nodes, SMP for running on a single node.
+
