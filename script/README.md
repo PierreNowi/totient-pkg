@@ -14,10 +14,9 @@ about what they are doing to update their own startup files.
 ## IPython profile setup
 
 The `setup_ipython_htc.sh` script sets up an IPython profile (`htc`)
-for running `ipcluster` jobs on C4.
-
-TODO: I should also write a `setup_ipython_mpi.sh` script to run
-jobs that call `mpi4py`.
+for running `ipcluster` jobs on C4.  The `setup_ipython_mpi.sh` script
+sets up a similar IPython profile (`mpi`) for running `ipcluster` jobs
+on C4 with `mpi4py` enabled.
 
 ## MPI and UPC submissions
 
