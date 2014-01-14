@@ -1,0 +1,17 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "CS 5220 standard utilities"
+}
+ 
+module-whatis "CS 5220 standard utilities"
+
+set pcdir /share/cs-instructional/cs5220/local/
+prepend-path PATH /share/cs-instructional/cs5220/script
+prepend-path PATH $pcdir/bin
+prepend-path CPATH $pcdir/include
+prepend-path LD_LIBRARY_PATH $pcdir/lib
+prepend-path LD_LIBRARY_PATH $pcdir/lib64
+prepend-path LIBRARY_PATH $pcdir/lib
+prepend-path LIBRARY_PATH $pcdir/lib64
+prepend-path MANPATH $pcdir/man

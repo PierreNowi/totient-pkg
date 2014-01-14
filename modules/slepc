@@ -1,0 +1,13 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "SLEPc 3.4.3"
+}
+ 
+module-whatis "SLEPc 3.4.3"
+set petscdir /share/cs-instructional/cs5220/local/slepc-3.4.3
+
+prepend-path CPATH $petscdir/include
+prepend-path LIBRARY_PATH $petscdir/lib
+prepend-path LD_LIBRARY_PATH $petscdir/lib
+setenv SLEPC_DIR $petscdir

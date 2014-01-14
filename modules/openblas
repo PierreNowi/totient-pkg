@@ -1,0 +1,12 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "OpenBLAS"
+}
+ 
+module-whatis "OpenBLAS"
+set basedir /share/cs-instructional/cs5220/local/OpenBLAS
+
+prepend-path CPATH $basedir/include
+prepend-path LIBRARY_PATH $basedir/lib
+prepend-path LD_LIBRARY_PATH $basedir/lib

@@ -1,0 +1,17 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "TAU and PDT"
+}
+ 
+module-whatis "TAU and PDT"
+prepend-path PATH /share/cs-instructional/cs5220/local/pdt/x86_64/bin
+prepend-path PATH /share/cs-instructional/cs5220/local/tau/x86_64/bin
+prepend-path LD_LIBRARY_PATH /share/cs-instructional/cs5220/local/pdt/x86_64/lib
+prepend-path LD_LIBRARY_PATH /share/cs-instructional/cs5220/local/tau/x86_64/lib
+prepend-path LIBRARY_PATH /share/cs-instructional/cs5220/local/pdt/x86_64/lib
+prepend-path LIBRARY_PATH /share/cs-instructional/cs5220/local/tau/x86_64/lib
+prepend-path MANPATH /share/cs-instructional/cs5220/local/tau/man
+set TAULIBDIR /share/cs-instructional/cs5220/local/tau/x86_64/lib
+setenv TAU_MAKEFILE $TAULIBDIR/Makefile.tau-papi-mpi-pthread-pdt-openmp 
+setenv TAU_OPTIONS "-optVerbose"
