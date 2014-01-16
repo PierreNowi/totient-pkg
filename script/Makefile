@@ -8,6 +8,7 @@ SCRIPTS=setup_ipython_htc.sh setup_ipython_mpi.sh setup_ipython_nbserver.sh \
 
 install:
 	install -t $(APCPATH)/script $(SCRIPTS) 
+	(cd serial; make install)
 	(cd openmpi; make install)
 	(cd intelmpi; make install)
 	(cd upc; make install)
