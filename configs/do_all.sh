@@ -13,6 +13,7 @@
 ./libtool.sh
 ./autoconf.sh
 ./automake.sh
+./makedepend.sh
 
 # -- CMake
 ./cmake.sh 
