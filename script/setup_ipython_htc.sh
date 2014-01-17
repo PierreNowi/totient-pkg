@@ -17,6 +17,7 @@ transfer_executable = false
 getenv              = true
 notification        = never
 arguments       = "--log-to-file '--profile-dir=$HOME/.ipython/profile_htc' '--cluster-id='"
+requirements = C4_GROUP == "cs"
 
 queue {n}
 EOF

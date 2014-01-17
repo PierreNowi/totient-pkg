@@ -18,6 +18,7 @@ executable      = $MPISCRIPT
 getenv          = true
 notification    = never
 arguments       = "$HOME $IPENGINE --log-to-file '--profile-dir=$HOME/.ipython/profile_mpi' '--cluster-id='"
+requirements    = C4_GROUP == "cs"
 machine_count   = {n}
 queue
 EOF
