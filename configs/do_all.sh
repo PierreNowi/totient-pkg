@@ -65,6 +65,7 @@
 ./libdwarf.sh
 ./dyninst.sh
 ./papi.sh
+./hwloc.sh
 
 # -- PDT and TAU (module)
 ./pdt.sh
