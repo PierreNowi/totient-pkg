@@ -120,3 +120,11 @@ We don't have infiniband on the cluster, so I've disabled it.  Users
 should default to the UDP transport layer for running across cluster
 nodes, SMP for running on a single node.
 
+## Visit
+
+By default, VisIt builds without Mesa support, but Mesa is not installed
+on the cluster, and we need *something* to do rendering.  Building Mesa
+required installing `makedepend` and the Python package `libxml2`.  Note
+that the `visit.sh` script requires some interactive input along the way;
+it also takes quite a while to run.
+
