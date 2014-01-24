@@ -2,4 +2,4 @@
 #
 # Trampoline for csub.
 
-$@
+exec "$@"
