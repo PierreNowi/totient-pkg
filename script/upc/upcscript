@@ -22,6 +22,10 @@
 WORKING=$1
 shift
 
+# Get number of threads
+NTHREAD=$1
+shift
+
 # Set up default paths
 UPCDIR=/share/cs-instructional/cs5220/local/upc
 PATH=$UPCDIR/bin:.:$PATH
@@ -88,7 +92,7 @@ export UPC_SSH=$CONDOR_SSH
 export UPC_NODEFILE=`pwd`/machines
 CDIR=$PWD
 cd $WORKING
-upcrun -n $_CONDOR_NPROCS $EXECUTABLE $@
+upcrun -n $NTHREAD $EXECUTABLE $@
 cd $CDIR
 
 sshd_cleanup
