@@ -4,7 +4,8 @@
 # http://www.netlib.org/lapack/
 
 source ./helper.sh
-set_stage_dl httpp://www.netlib.org/lapack/lapack-3.5.0.tgz
+set_stage_dl http://www.netlib.org/lapack/lapack-3.5.0.tgz
+export LD_LIBRARY_PATH=$PREFIX/OpenBLAS/lib:$LD_LIBRARY_PATH
 
 # Build shared libraries
 mkdir build_shared

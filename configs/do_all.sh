@@ -1,4 +1,15 @@
 #!/bin/sh
+set -e
+
+# -- Most everything goes into the base package -- set up appropriate path
+module load cs5220-base
+
+# -- GCC 4.8.2 + wrappers
+./gcc.sh
+./gcc_wrapper.sh
+
+# -- Let's build everything else with the new GCC
+module load gcc-4.8.2
 
 # -- tmux lets us finish rebuilding without a window
 ./libevent.sh
@@ -10,10 +21,11 @@
 ./curl.sh
 
 # -- Most recent autoconf/automake/libtool
+./patchelf.sh
+./makedepend.sh
 ./libtool.sh
 ./autoconf.sh
 ./automake.sh
-./makedepend.sh
 
 # -- CMake
 ./cmake.sh 
@@ -21,16 +33,11 @@
 # -- Build valgrind
 ./valgrind.sh
 
-# -- For building current GCC and CLang
-./gmp.sh
-./mpfr.sh
-./mpc.sh
-./isl.sh
-./cloog.sh
+# -- For building current CLang
 ./libedit.sh
 
-# -- GCC 4.8.2 (module)
-./gcc.sh
+# -- libunwind (useful for mpiP)
+./libunwind.sh
 
 # -- OpenMPI 1.6.5 (module)
 ./openmpi.sh
@@ -77,10 +84,6 @@
 # -- IPM (module)
 ./ploticus.sh
 ./ipm.sh
-
-# -- Links and Lynx browsers (modules)
-./links.sh
-./lynx.sh
 
 # -- For building LLVM and CLang (module)
 ./llvm.sh

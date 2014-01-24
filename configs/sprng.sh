@@ -17,6 +17,7 @@ cd $DIRNAME
 sed -i 's/mpi[/]mpi.h/mpi.h/' SRC/communicate.cpp
 sed -i 's/__/_/' SRC/fwrap.h
 
+module load openmpi-1.6.5
 ./configure CXX=mpicxx F77=mpif77 CXXFLAGS=-DLONG64=long LIBS=-lmpi_cxx \
 --prefix=$PREFIX/$DIRNAME
 make clean

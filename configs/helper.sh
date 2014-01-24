@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit on first error
+set -e
+
 # Install under cs-instructional 
 if [ -z "$PREFIX" ]; then
   PREFIX=/share/cs-instructional/cs5220/local
@@ -87,6 +90,8 @@ function set_stage_dl () {
   elif echo $TARBALL | grep -q '[.]tgz$' ; then
     echo "Fetching $TARBALL"
     wgetl $1
+    mkdir tmp
+    cd tmp
     tar -xzf ../$TARBALL
   elif echo $TARBALL | grep -q '[.]bz2$' ; then
     echo "Fetching $TARBALL"
@@ -117,11 +122,63 @@ function stage_dl_ac() {
   if echo "$@" | grep "prefix" ; then
     prefix_opt=""
   else
-    prefix_opt="--prefix=$PREFIX"
+    prefix_opt="--prefix $PREFIX"
   fi
   ./configure $prefix_opt $@
   make
   make install
   leave_stage
+  return 0
 }
 
+#
+# run_dl_ac URL DIRNAME
+# Download with autoconf, assuming stage already set
+#
+function run_dl_ac () {
+  rm -rf *
+
+  # Fetch the repository
+  local TARBALL=`echo $1 | sed 's/^.*\///'`
+  if echo $TARBALL | grep -q '[.]git$' ; then
+    echo "Fetching git file $1"
+    git clone $1
+  elif echo $TARBALL | grep -q '[.]gz$' ; then
+    echo "Fetching $TARBALL"
+    wgetl $1
+    mkdir tmp
+    cd tmp
+    tar -xzf ../$TARBALL
+  elif echo $TARBALL | grep -q '[.]tgz$' ; then
+    echo "Fetching $TARBALL"
+    wgetl $1
+    tar -xzf ../$TARBALL
+  elif echo $TARBALL | grep -q '[.]bz2$' ; then
+    echo "Fetching $TARBALL"
+    wgetl $1
+    mkdir tmp
+    cd tmp
+    tar -xjf ../$TARBALL
+  fi
+
+  # Set the dirname (if not already set)
+  if [ -z $2 ]; then
+    export DIRNAME=`ls`
+  fi
+
+  # Change to subdirectory
+  cd `ls`
+
+  # Run the build
+  shift
+  if echo "$@" | grep "prefix" ; then
+    prefix_opt=""
+  else
+    prefix_opt="--prefix $PREFIX"
+  fi
+  ./configure $prefix_opt $@
+  make
+  make install
+
+  return 0
+}
