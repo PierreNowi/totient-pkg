@@ -29,7 +29,7 @@ notification = never
 machine_count = $NP
 EOF
 
-write_reqs()
+write_reqs
 echo "queue" >> $SUBFILE
 
 condor_submit $SUBFILE

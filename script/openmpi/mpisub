@@ -24,14 +24,14 @@ executable = $which_script
 transfer_executable = false
 getenv = true
 arguments = $hast $EXE $@
-output = $BASENAME-$$-o.\$(NODE)
-error  = $BASENAME-$$-e.\$(NODE)
-log    = $BASENAME-$$-l
+output = $BASENAME-o.\$(NODE)
+error  = $BASENAME-e.\$(NODE)
+log    = $BASENAME-l
 notification = never
 machine_count = $NP
 EOF
 
-write_reqs()
+write_reqs
 echo "queue" >> $SUBFILE
 
 condor_submit $SUBFILE

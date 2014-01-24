@@ -16,7 +16,7 @@ notification = never
 
 EOF
 
-write_reqs()
+write_reqs
 
 for job in `seq 1 $NP` ; do
 let jobid=job-1
