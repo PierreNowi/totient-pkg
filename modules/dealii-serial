@@ -10,4 +10,5 @@ set dealii /share/cs-instructional/cs5220/local/deal.II-8.0-serial/
 prepend-path CPATH $dealii/include
 prepend-path LIBRARY_PATH $dealii/lib
 prepend-path LD_LIBRARY_PATH $dealii/lib
+prepend-path LD_RUN_PATH $dealii/lib
 prepend-path CMAKE_MODULE_PATH $dealii/cmake

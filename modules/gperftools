@@ -9,8 +9,8 @@ module-whatis "gperftools 2.1"
 set basedir /share/cs-instructional/cs5220/local/gperftools-2.1
 prepend-path PATH $basedir/bin
 prepend-path CPATH $basedir/include
-prepend-path LD_LIBRARY_PATH $basedir/lib
-prepend-path LD_LIBRARY_PATH $basedir/lib64
 prepend-path LIBRARY_PATH $basedir/lib
 prepend-path LIBRARY_PATH $basedir/lib64
+prepend-path LD_RUN_PATH $basedir/lib
+prepend-path LD_RUN_PATH $basedir/lib64
 prepend-path MANPATH $basedir/share/man

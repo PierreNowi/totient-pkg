@@ -7,4 +7,4 @@ proc ModulesHelp { } {
 module-whatis "IPM"
 prepend-path PATH /share/cs-instructional/cs5220/local/IPM/bin
 prepend-path LIBRARY_PATH /share/cs-instructional/cs5220/local/IPM/lib
-prepend-path LD_LIBRARY_PATH /share/cs-instructional/cs5220/local/IPM/lib
+prepend-path LD_RUN_PATH /share/cs-instructional/cs5220/local/IPM/lib

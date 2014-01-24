@@ -10,4 +10,5 @@ set trihome /share/cs-instructional/cs5220/local/trilinos/serial-opt-shared
 prepend-path CPATH $trihome/include
 prepend-path LIBRARY_PATH $trihome/lib
 prepend-path LD_LIBRARY_PATH $trihome/lib
+prepend-path LD_RUN_PATH $trihome/lib
 prepend-path CMAKE_MODULE_PATH $trihome/lib/cmake/Trilinos

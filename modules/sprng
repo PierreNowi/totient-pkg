@@ -9,4 +9,4 @@ set basedir /share/cs-instructional/cs5220/local/sprng4.4
 
 prepend-path CPATH $basedir/include
 prepend-path LIBRARY_PATH $basedir/lib
-prepend-path LD_LIBRARY_PATH $basedir/lib
+prepend-path LD_RUN_PATH $basedir/lib

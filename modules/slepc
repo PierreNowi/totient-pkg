@@ -5,9 +5,10 @@ proc ModulesHelp { } {
 }
  
 module-whatis "SLEPc 3.4.3"
-set petscdir /share/cs-instructional/cs5220/local/slepc-3.4.3
+set slepcdir /share/cs-instructional/cs5220/local/slepc-3.4.3
 
-prepend-path CPATH $petscdir/include
-prepend-path LIBRARY_PATH $petscdir/lib
-prepend-path LD_LIBRARY_PATH $petscdir/lib
-setenv SLEPC_DIR $petscdir
+prepend-path CPATH $slepcdir/include
+prepend-path LIBRARY_PATH $slepcdir/lib
+prepend-path LD_LIBRARY_PATH $slepcdir/lib
+prepend-path LD_RUN_PATH $slepcdir/lib
+setenv SLEPC_DIR $slepcdir
