@@ -16,6 +16,6 @@ module load tau
 #module load ipm
 
 #module load llvm
-#module load anaconda
+module load anaconda
 #module load upc
 #module load julia
