@@ -76,6 +76,7 @@ module load gcc-4.8.2
 
 # -- Lua
 ./lua.sh
+./ldoc.sh
 
 # -- FFMPEG (enough for coding vids)
 ./yasm.sh
