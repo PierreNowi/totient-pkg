@@ -74,6 +74,14 @@ module load gcc-4.8.2
 ./papi.sh
 ./hwloc.sh
 
+# -- Lua
+./lua.sh
+
+# -- FFMPEG (enough for coding vids)
+./yasm.sh
+./x264.sh
+./ffmpeg.sh
+
 # -- PDT and TAU (module)
 ./pdt.sh
 ./tau.sh
