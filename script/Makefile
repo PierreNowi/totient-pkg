@@ -12,6 +12,7 @@ install:
 	install -t $(APCPATH)/script $(SCRIPTS) 
 	install -t $(APCPATH)/local/etc subbasement.sh
 	(cd serial; make install)
+	(cd openmp; make install)
 	(cd openmpi; make install)
 	(cd intelmpi; make install)
 	(cd upc; make install)
