@@ -1,0 +1,8 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "mpiP"
+}
+ 
+module-whatis "mpiP"
+prepend-path LIBRARY_PATH /share/cs-instructional/cs5220/local/mpip/lib
