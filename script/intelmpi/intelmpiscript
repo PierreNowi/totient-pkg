@@ -56,6 +56,12 @@ SSHD_SH=$SSHD_SH/sshd.sh
 
 . $SSHD_SH $_CONDOR_PROCNO $_CONDOR_NPROCS 
 
+NTHREAD=$1
+shift
+
+NPTHREAD=$1
+shift
+
 EXECUTABLE=$1
 shift
 
@@ -77,11 +83,11 @@ export CONDOR_CONTACT_FILE
 
 # The second field in the contact file is the machine name
 # that condor_ssh knows how to use
-sort -n -k 1 < $CONDOR_CONTACT_FILE | awk '{print $2}' > $_CONDOR_SCRATCH_DIR/machines
+sort -n -k 1 < $CONDOR_CONTACT_FILE | awk "{print \$2 \":\" $NPTHREAD }" > $_CONDOR_SCRATCH_DIR/machines
 
 ## run the actual mpijob
 mpiexec.hydra -bootstrap ssh -bootstrap-exec $CONDOR_SSH \
-	-n $_CONDOR_NPROCS -f $_CONDOR_SCRATCH_DIR/machines \
+	-n $NTHREAD -f $_CONDOR_SCRATCH_DIR/machines \
 	$EXECUTABLE $@
 
 sshd_cleanup
