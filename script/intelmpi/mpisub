@@ -28,7 +28,8 @@ output = $BASENAME-o.\$(NODE)
 error  = $BASENAME-e.\$(NODE)
 log    = $BASENAME-l
 notification = never
-machine_count = $NP
+request_cpus = $NPTHREAD
+machine_count = $NPROCESS
 EOF
 
 write_reqs

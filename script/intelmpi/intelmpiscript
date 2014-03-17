@@ -19,7 +19,7 @@
 ##**************************************************************
 
 # Set up default paths
-MPDIR=/share/cs-instructional/cs5220/local/openmpi-1.6.5
+MPDIR=/share/cs-instructional/cs5220/intel/impi/4.1.1.036/intel64/
 PATH=$MPDIR/bin:.:$PATH
 export PATH
 
@@ -48,8 +48,9 @@ export PATH
 _CONDOR_PROCNO=$_CONDOR_PROCNO
 _CONDOR_NPROCS=$_CONDOR_NPROCS
 
-CONDOR_SSH=`condor_config_val libexec`
-CONDOR_SSH=$CONDOR_SSH/condor_ssh
+#CONDOR_SSH=`condor_config_val libexec`
+#CONDOR_SSH=$CONDOR_SSH/condor_ssh
+CONDOR_SSH=/share/cs-instructional/cs5220/intel/impi/4.1.1.036/intel64/etc/condor_impi_ssh
 
 SSHD_SH=`condor_config_val libexec`
 SSHD_SH=$SSHD_SH/sshd.sh
@@ -83,11 +84,16 @@ export CONDOR_CONTACT_FILE
 
 # The second field in the contact file is the machine name
 # that condor_ssh knows how to use
-sort -n -k 1 < $CONDOR_CONTACT_FILE | awk "{print \$2 \":\" $NPTHREAD }" > $_CONDOR_SCRATCH_DIR/machines
+sort -n -k 1 < $CONDOR_CONTACT_FILE | awk '{print $2}' > $_CONDOR_SCRATCH_DIR/machines
+
+cp $CONDOR_CONTACT_FILE $HOME/tmp
+cp $_CONDOR_SCRATCH_DIR/machines $HOME/tmp/machines
 
 ## run the actual mpijob
+I_MPI_FABRICS="shm:tcp" \
 mpiexec.hydra -bootstrap ssh -bootstrap-exec $CONDOR_SSH \
-	-n $NTHREAD -f $_CONDOR_SCRATCH_DIR/machines \
+	-n $NTHREAD -perhost $NPTHREAD \
+	-f $_CONDOR_SCRATCH_DIR/machines \
 	$EXECUTABLE $@
 
 sshd_cleanup

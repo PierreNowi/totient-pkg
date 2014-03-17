@@ -65,18 +65,17 @@ BASENAME=$subname-$$
 SUBFILE=$BASENAME.sub
 
 function split_nproc() {
-  NPROCESS=`echo $NP | sed 's/[0-9]*x//'`
-  NPTHREAD=`echo $NP | sed 's/x[0-9]*//'`
-  if [ -z "$NPROCESS" ] ; then
+  if echo $NP | grep "x" ; then
+    NPROCESS=`echo $NP | sed 's/[0-9]*x\([0-9]*\)/\1/'`
+    NPTHREAD=`echo $NP | sed 's/x[0-9]*//'`
+  else
     NPROCESS=1
-  fi
-  if [ -z "$NPTHREAD" ] ; then
-    NPTHREAD=1
+    NPTHREAD=$NP
   fi
   NTHREAD=$[ $NPROCESS * $NPTHREAD ]
-  #echo "Processes: $NPROCESS"
-  #echo "Threads per: $NPTHREAD"
-  #echo "Threads total: $NTHREAD"
+  echo "Slots: $NPROCESS"
+  echo "Processes per: $NPTHREAD"
+  echo "Processes total: $NTHREAD"
 }
 
 function write_reqs() {
