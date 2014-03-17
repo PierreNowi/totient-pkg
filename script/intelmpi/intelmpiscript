@@ -50,7 +50,7 @@ _CONDOR_NPROCS=$_CONDOR_NPROCS
 
 #CONDOR_SSH=`condor_config_val libexec`
 #CONDOR_SSH=$CONDOR_SSH/condor_ssh
-CONDOR_SSH=/share/cs-instructional/cs5220/intel/impi/4.1.1.036/intel64/etc/condor_impi_ssh
+CONDOR_SSH=/share/cs-instructional/cs5220/intel/impi/4.1.1.036/intel64/bin/condor_impi_ssh
 
 SSHD_SH=`condor_config_val libexec`
 SSHD_SH=$SSHD_SH/sshd.sh
