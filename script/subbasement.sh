@@ -74,9 +74,9 @@ function split_nproc() {
     NPTHREAD=1
   fi
   NTHREAD=$[ $NPROCESS * $NPTHREAD ]
-  echo "Processes: $NPROCESS"
-  echo "Threads per: $NPTHREAD"
-  echo "Threads total: $NTHREAD"
+  #echo "Processes: $NPROCESS"
+  #echo "Threads per: $NPTHREAD"
+  #echo "Threads total: $NTHREAD"
 }
 
 function write_reqs() {

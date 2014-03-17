@@ -77,7 +77,7 @@ export CONDOR_CONTACT_FILE
 
 # The second field in the contact file is the machine name
 # that condor_ssh knows how to use
-sort -n -k 1 < $CONDOR_CONTACT_FILE | awk '{print $2}' > $_CONDOR_SCRATCH_DIR/machines
+sort -n -k 1 < $CONDOR_CONTACT_FILE | awk "{print \$2 \" slots=$NPTHREAD\" }" > $_CONDOR_SCRATCH_DIR/machines
 
 ## run the actual mpijob
 mpirun -v \
