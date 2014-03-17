@@ -56,6 +56,12 @@ SSHD_SH=$SSHD_SH/sshd.sh
 
 . $SSHD_SH $_CONDOR_PROCNO $_CONDOR_NPROCS 
 
+NTHREAD=$1
+shift
+
+NPTHREAD=$1
+shift
+
 EXECUTABLE=$1
 shift
 
@@ -80,10 +86,17 @@ export CONDOR_CONTACT_FILE
 sort -n -k 1 < $CONDOR_CONTACT_FILE | awk "{print \$2 \" slots=$NPTHREAD\" }" > $_CONDOR_SCRATCH_DIR/machines
 
 ## run the actual mpijob
+#mpirun -v \
+#  --prefix $MPDIR \
+#  --mca orte_rsh_agent $CONDOR_SSH \
+#  -n $_CONDOR_NPROCS \
+#  -hostfile $_CONDOR_SCRATCH_DIR/machines \
+#  $EXECUTABLE $@ 
+
 mpirun -v \
   --prefix $MPDIR \
   --mca orte_rsh_agent $CONDOR_SSH \
-  -n $_CONDOR_NPROCS \
+  -n $NTHREAD \
   -hostfile $_CONDOR_SCRATCH_DIR/machines \
   $EXECUTABLE $@ 
 
