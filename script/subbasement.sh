@@ -14,6 +14,7 @@ if [ $# -lt 1 ]; then
   echo "  -a -- use whole cluster (vs just instructional nodes)"
   echo "  -t -- use TAU to profile"
   echo "  -f -- specify additional HTCondor features"
+  echo "  -d -- dry run (produce sub file, but do not submit)"
   exit 0
 fi
 
@@ -46,6 +47,13 @@ fi
 if [ "$1" = "-f" ]; then
   shift
   hasf=$1
+  shift
+  done_parsing=false
+fi
+
+if [ "$1" = "-d" ]; then
+  shift
+  hasd=$1
   shift
   done_parsing=false
 fi

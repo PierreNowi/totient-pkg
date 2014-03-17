@@ -34,4 +34,6 @@ EOF
 write_reqs
 echo "queue" >> $SUBFILE
 
-condor_submit $SUBFILE
+if [ -z "$hasd" ]; then
+  condor_submit $SUBFILE
+fi

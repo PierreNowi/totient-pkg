@@ -29,4 +29,6 @@ queue
 EOF
 done
 
-condor_submit $SUBFILE
+if [ -z "$hasd" ]; then
+  condor_submit $SUBFILE
+fi
