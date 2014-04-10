@@ -5,5 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Julia"
+#prepend-path PATH /share/cs-instructional/cs5220/local/julia-2014-04-10/usr/bin
+#prepend-path MANPATH /share/cs-instructional/cs5220/local/julia-2014-04-10/usr/man
 prepend-path PATH /share/cs-instructional/cs5220/local/julia/bin
 prepend-path MANPATH /share/cs-instructional/cs5220/local/julia/man
