@@ -22,6 +22,12 @@ log    = $BASENAME-l
 notification = never
 request_cpus = $NPTHREAD
 machine_count = $NPROCESS
+
+# Set max run time
+periodic_remove = JobStatus == 2 && \
+ ( (CurrentTime - EnteredCurrentStatus) + \
+   RemoteWallClockTime - CumulativeSuspensionTime < $MAX_RUN_TIME )
+
 EOF
 
 write_reqs

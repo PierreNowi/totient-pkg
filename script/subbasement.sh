@@ -8,11 +8,14 @@ hasa=""
 hast=""
 hasf=""
 
+MAX_RUN_TIME=10
+
 if [ $# -lt 1 ]; then
-  echo "Usage: $subname [-n procs] [-a] [-t opts] [-f script] exe args"
+  echo "Usage: $subname [-n procs] [-a] [-t opts] [-T time] [-f script] exe args"
   echo "  -n -- determines number of processes to launch (default 1)"
   echo "  -a -- use whole cluster (vs just instructional nodes)"
   echo "  -t -- use TAU to profile"
+  echo "  -T -- set maximum run time (default: 10 minutes)"
   echo "  -f -- specify additional HTCondor features"
   echo "  -d -- dry run (produce sub file, but do not submit)"
   exit 0
@@ -42,6 +45,12 @@ if [ "$1" = "-t" ]; then
   export TAU_VERBOSE=1
   export PROFILEDIR="."
   done_parsing=false
+fi
+
+if [ "$1" = "-T" ]; then
+  shift
+  MAX_RUN_TIME=$1
+  shift
 fi
 
 if [ "$1" = "-f" ]; then
