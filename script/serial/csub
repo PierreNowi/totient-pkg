@@ -14,6 +14,11 @@ getenv = true
 arguments = "$hast $@"
 notification = never
 
+# Set max run time
+periodic_remove = JobStatus == 2 && \
+ ( (CurrentTime - EnteredCurrentStatus) + \
+   RemoteWallClockTime - CumulativeSuspensionTime < $MAX_RUN_TIME )
+
 EOF
 
 write_reqs
