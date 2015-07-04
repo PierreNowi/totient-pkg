@@ -2,7 +2,7 @@
 #
 # Set up wrappers around gcc/g++/gfortran
 
-VER=gcc-4.8.2
+VER=gcc-4.9.3
 source ./helper.sh
 set_stage
 
@@ -31,7 +31,7 @@ if [ \$# -eq 0 ]; then
   GCC_WRAPPER_ARGS=""
 fi
 
-exec $PREFIX/$VER/bin/$1-4.8.2 "\$@" \$GCC_WRAPPER_ARGS
+exec $PREFIX/$VER/bin/$1-4.9.3 "\$@" \$GCC_WRAPPER_ARGS
 EOF
 chmod +x $PREFIX/$VER/bin/$1
 }
@@ -43,6 +43,6 @@ done
 
 # Symlink for preproc
 rm -f $PREFIX/$VER/bin/cpp
-ln -s $PREFIX/$VER/bin/cpp-4.8.2 $PREFIX/$VER/bin/cpp
+ln -s $PREFIX/$VER/bin/cpp-4.9.3 $PREFIX/$VER/bin/cpp
 
 leave_stage

@@ -2,14 +2,14 @@
 set -e
 
 # -- Most everything goes into the base package -- set up appropriate path
-module load cs5220-base
+module load magma-base
 
-# -- GCC 4.8.2 + wrappers
+# -- GCC 4.9.3 + wrappers
 ./gcc.sh
 ./gcc_wrapper.sh
 
 # -- Let's build everything else with the new GCC
-module load gcc-4.8.2
+module load gcc-4.9.3
 
 # -- tmux lets us finish rebuilding without a window
 ./libevent.sh
