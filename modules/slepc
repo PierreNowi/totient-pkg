@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "SLEPc 3.6.0"
-set slepcdir $HOME/local/slepc-3.6.0
+set slepcdir $env(HOME)/local/slepc-3.6.0
 
 prepend-path CPATH $slepcdir/include
 prepend-path LIBRARY_PATH $slepcdir/lib

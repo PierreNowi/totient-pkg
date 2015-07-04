@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "R"
-set basedir $HOME/local/R-3.2.1
+set basedir $env(HOME)/local/R-3.2.1
 
 prepend-path PATH $basedir/bin
 prepend-path LIBRARY_PATH $basedir/lib

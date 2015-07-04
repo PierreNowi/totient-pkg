@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "PETSc 3.6.0"
-set petscdir $HOME/local/petsc-3.6.0
+set petscdir $env(HOME)/local/petsc-3.6.0
 
 prepend-path CPATH $petscdir/include
 prepend-path LIBRARY_PATH $petscdir/lib

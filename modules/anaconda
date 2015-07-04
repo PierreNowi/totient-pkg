@@ -5,4 +5,4 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Anaconda Python distribution"
-prepend-path PATH $HOME/local/anaconda/bin
+prepend-path PATH $env(HOME)/local/anaconda/bin

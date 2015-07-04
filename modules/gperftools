@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "gperftools 2.4"
-set basedir $HOME/local/gperftools-2.4
+set basedir $env(HOME)/local/gperftools-2.4
 
 prepend-path PATH $basedir/bin
 prepend-path CPATH $basedir/include

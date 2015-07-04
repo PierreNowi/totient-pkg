@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "deal.II 8.2.1 (serial build)"
-set dealii $HOME/local/deal.II-8.2.1-serial/
+set dealii $env(HOME)/local/deal.II-8.2.1-serial/
 
 prepend-path CPATH $dealii/include
 prepend-path LIBRARY_PATH $dealii/lib

@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Trilinos (serial)"
-set trihome $HOME/local/trilinos/serial-opt-shared
+set trihome $env(HOME)/local/trilinos/serial-opt-shared
 
 prepend-path CPATH $trihome/include
 prepend-path LIBRARY_PATH $trihome/lib

@@ -5,8 +5,8 @@ proc ModulesHelp { } {
 }
  
 module-whatis "TAU and PDT"
-set pdt $HOME/local/pdt
-set tau $HOME/local/tau
+set pdt $env(HOME)/local/pdt
+set tau $env(HOME)/local/tau
 
 prepend-path PATH $pdt/x86_64/bin
 prepend-path PATH $tau/x86_64/bin

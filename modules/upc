@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "UPC 2.20.2"
-set base $HOME/local/upc
+set base $env(HOME)/local/upc
 
 prepend-path PATH $base/bin
 prepend-path MANPATH $base/man

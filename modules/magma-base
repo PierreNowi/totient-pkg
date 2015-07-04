@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Magma standard utilities"
-set pcdir $HOME/local
+set pcdir $env(HOME)/local
 
 prepend-path PATH $pcdir/bin
 prepend-path CPATH $pcdir/include

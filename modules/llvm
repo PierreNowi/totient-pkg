@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "LLVM 3.6.1"
-set basedir $HOME/local/llvm-3.6.1
+set basedir $env(HOME)/local/llvm-3.6.1
 
 prepend-path PATH $basedir/bin
 prepend-path CPATH $basedir/include

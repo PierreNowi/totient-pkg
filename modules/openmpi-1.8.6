@@ -6,7 +6,7 @@ proc ModulesHelp { } {
  
 module-whatis "OpenMPI 1.8.6"
 
-set basedir $HOME/local/openmpi-1.8.6
+set basedir $env(HOME)/local/openmpi-1.8.6
 prepend-path PATH $basedir/bin
 prepend-path CPATH $basedir/include
 prepend-path LIBRARY_PATH $basedir/lib

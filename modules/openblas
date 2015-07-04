@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "OpenBLAS"
-set basedir $HOME/local/OpenBLAS
+set basedir $env(HOME)/local/OpenBLAS
 
 prepend-path CPATH $basedir/include
 prepend-path LIBRARY_PATH $basedir/lib

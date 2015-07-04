@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Julia"
-set basedir $HOME/local/julia-2015-07-04
+set basedir $env(HOME)/local/julia-2015-07-04
 
 prepend-path PATH $basedir/bin
 prepend-path MANPATH $basedir/man
