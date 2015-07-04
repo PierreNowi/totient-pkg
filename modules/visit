@@ -5,6 +5,6 @@ proc ModulesHelp { } {
 }
  
 module-whatis "VisIt 2.7.0"
-set basepath /share/cs-instructional/cs5220/local/visit
+set basepath $HOME/local/visit
 
 prepend-path PATH $basepath/bin

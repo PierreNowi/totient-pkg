@@ -5,5 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Julia"
-prepend-path PATH /share/cs-instructional/cs5220/local/julia-2014-04-11/bin
-prepend-path MANPATH /share/cs-instructional/cs5220/local/julia-2014-04-11/man
+set basedir $HOME/local/julia-2015-07-04
+
+prepend-path PATH $basedir/bin
+prepend-path MANPATH $basedir/man

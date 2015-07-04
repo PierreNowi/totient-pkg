@@ -5,7 +5,8 @@ proc ModulesHelp { } {
 }
  
 module-whatis "R"
-set basedir /share/cs-instructional/cs5220/local/R-3.1.0
+set basedir $HOME/local/R-3.2.1
+
 prepend-path PATH $basedir/bin
 prepend-path LIBRARY_PATH $basedir/lib
 prepend-path LD_RUN_PATH $basedir/lib

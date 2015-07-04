@@ -1,11 +1,11 @@
 #%Module1.0
 proc ModulesHelp { } {
   global dotversion
-  puts stderr "deal.IIi 8.0 (serial build)"
+  puts stderr "deal.II 8.2.1 (serial build)"
 }
  
-module-whatis "deal.II 8.0 (serial build)"
-set dealii /share/cs-instructional/cs5220/local/deal.II-8.0-serial/
+module-whatis "deal.II 8.2.1 (serial build)"
+set dealii $HOME/local/deal.II-8.2.1-serial/
 
 prepend-path CPATH $dealii/include
 prepend-path LIBRARY_PATH $dealii/lib

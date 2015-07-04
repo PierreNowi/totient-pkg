@@ -1,11 +1,11 @@
 #%Module1.0
 proc ModulesHelp { } {
   global dotversion
-  puts stderr "SLEPc 3.4.3"
+  puts stderr "SLEPc 3.6.0"
 }
  
-module-whatis "SLEPc 3.4.3"
-set slepcdir /share/cs-instructional/cs5220/local/slepc-3.4.3
+module-whatis "SLEPc 3.6.0"
+set slepcdir $HOME/local/slepc-3.6.0
 
 prepend-path CPATH $slepcdir/include
 prepend-path LIBRARY_PATH $slepcdir/lib

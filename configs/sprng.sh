@@ -2,6 +2,8 @@
 #
 # SPRNG -- Scalable Pseudo-Random Number Generator
 # http://www.sprng.org/
+#
+# TODO: Update to sprng5
 
 DIRNAME=sprng4.4
 TARBALL=$DIRNAME.bz2
@@ -17,7 +19,7 @@ cd $DIRNAME
 sed -i 's/mpi[/]mpi.h/mpi.h/' SRC/communicate.cpp
 sed -i 's/__/_/' SRC/fwrap.h
 
-module load openmpi-1.6.5
+module load openmpi-1.8.6
 ./configure CXX=mpicxx F77=mpif77 CXXFLAGS=-DLONG64=long LIBS=-lmpi_cxx \
 --prefix=$PREFIX/$DIRNAME
 make clean

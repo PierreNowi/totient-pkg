@@ -5,4 +5,4 @@ proc ModulesHelp { } {
 }
  
 module-whatis "mpiP"
-prepend-path LIBRARY_PATH /share/cs-instructional/cs5220/local/mpip/lib
+prepend-path LIBRARY_PATH $HOME/local/mpip/lib

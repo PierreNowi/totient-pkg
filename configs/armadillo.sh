@@ -4,7 +4,7 @@
 # http://arma.sourceforge.net/
 
 source ./helper.sh
-set_stage_dl http://downloads.sourceforge.net/project/arma/armadillo-3.930.0.tar.gz
+set_stage_dl http://downloads.sourceforge.net/project/arma/armadillo-5.200.2.tar.gz
 
 # Build shared libraries
 mkdir build

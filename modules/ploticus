@@ -5,5 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Ploticus"
-prepend-path PATH /share/cs-instructional/cs5220/local/ploticus/bin
-setenv PLOTICUS_PREFABS /share/cs-instructional/cs5220/ploticus/prefabs
+set basedir $HOME/local/ploticus
+
+prepend-path PATH $basedir/bin
+setenv PLOTICUS_PREFABS $basedir/prefabs

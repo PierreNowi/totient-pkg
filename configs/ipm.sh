@@ -5,7 +5,7 @@
 
 source ./helper.sh
 set_stage_dl https://github.com/nerscadmin/IPM.git
-module load openmpi-1.6.5
+module load openmpi-1.8.6
 
 patch -p0 < $MAGMA_PKG/patches/ipm.patch
 set +e

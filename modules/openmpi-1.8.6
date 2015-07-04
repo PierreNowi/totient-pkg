@@ -1,12 +1,12 @@
 #%Module1.0
 proc ModulesHelp { } {
   global dotversion
-  puts stderr "OpenMPI 1.6.5"
+  puts stderr "OpenMPI 1.8.6"
 }
  
-module-whatis "OpenMPI 1.6.5"
+module-whatis "OpenMPI 1.8.6"
 
-set basedir /share/cs-instructional/cs5220/local/openmpi-1.6.5
+set basedir $HOME/local/openmpi-1.8.6
 prepend-path PATH $basedir/bin
 prepend-path CPATH $basedir/include
 prepend-path LIBRARY_PATH $basedir/lib

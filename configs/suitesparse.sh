@@ -1,10 +1,10 @@
 #!/bin/sh
 #
 # SuiteSparse
-# http://www.cise.ufl.edu/research/sparse/SuiteSparse/
+# http://faculty.cse.tamu.edu/davis/suitesparse.html
 
 source ./helper.sh
-set_stage_dl http://www.cise.ufl.edu/research/sparse/SuiteSparse/SuiteSparse-4.2.1.tar.gz
+set_stage_dl http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.4.tar.gz
 
 patch -p1 -i $MAGMA_PKG/patches/suitesparse-metis5.patch
 cat >> SuiteSparse_config/SuiteSparse_config.mk <<EOF

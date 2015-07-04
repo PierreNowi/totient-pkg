@@ -4,7 +4,7 @@
 # http://www.prevanders.net/dwarf.html
 
 source ./helper.sh
-set_stage_dl http://prevanders.net/libdwarf-20130729.tar.gz
+set_stage_dl http://prevanders.net/libdwarf-20150507.tar.gz
 
 # Note: build is known to fail when running tag_tree_build; lib still works
 ./configure --enable-shared

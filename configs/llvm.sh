@@ -2,7 +2,7 @@
 #
 # LLVM
 
-VER=3.3
+VER=3.6.1
 STZ=$VER.src.tar.gz
 BASE_URL=http://llvm.org/releases/$VER
 

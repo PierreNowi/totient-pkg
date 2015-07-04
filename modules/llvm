@@ -1,12 +1,12 @@
 #%Module1.0
 proc ModulesHelp { } {
   global dotversion
-  puts stderr "LLVM 3.3"
+  puts stderr "LLVM 3.6.1"
 }
  
-module-whatis "LLVM 3.3"
+module-whatis "LLVM 3.6.1"
+set basedir $HOME/local/llvm-3.6.1
 
-set basedir /share/cs-instructional/cs5220/local/llvm-3.3
 prepend-path PATH $basedir/bin
 prepend-path CPATH $basedir/include
 prepend-path LIBRARY_PATH $basedir/lib

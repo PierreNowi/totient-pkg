@@ -3,7 +3,7 @@
 # SLEPc
 
 source ./helper.sh
-set_stage_dl http://www.grycap.upv.es/slepc/download/slepc-3.4.3.tar.gz
+set_stage_dl http://www.grycap.upv.es/slepc/download/slepc-3.6.0.tar.gz
 
 export SLEPC_DIR=$PWD
 module load petsc

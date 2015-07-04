@@ -39,7 +39,7 @@ module load gcc-4.9.3
 # -- libunwind (useful for mpiP)
 ./libunwind.sh
 
-# -- OpenMPI 1.6.5 (module)
+# -- OpenMPI 1.8.6 (module)
 ./openmpi.sh
 
 # -- OpenBLAS (module)
@@ -49,7 +49,7 @@ module load gcc-4.9.3
 ./lapack.sh
 
 # -- SPRNG (module)
-./sprng.sh
+# ./sprng.sh
 
 # -- Boost
 ./boost.sh
@@ -107,7 +107,6 @@ module load gcc-4.9.3
 # -- Numerical frameworks (modules)
 ./petsc.sh
 ./slepc.sh
-./tao.sh
 ./sundials.sh
 ./trilinos.sh
 

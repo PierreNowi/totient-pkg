@@ -5,7 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "LAPACK 3.5.0"
-set basedir /share/cs-instructional/cs5220/local/lapack-3.5.0
+set basedir $HOME/local/lapack-3.5.0
 
 prepend-path CPATH $basedir/include
 prepend-path LIBRARY_PATH $basedir/lib

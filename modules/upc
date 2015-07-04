@@ -1,9 +1,11 @@
 #%Module1.0
 proc ModulesHelp { } {
   global dotversion
-  puts stderr "UPC 2.18.0"
+  puts stderr "UPC 2.20.2"
 }
  
-module-whatis "UPC 2.18.0"
-prepend-path PATH /share/cs-instructional/cs5220/local/upc/bin
-prepend-path MANPATH /share/cs-instructional/cs5220/local/upc/man
+module-whatis "UPC 2.20.2"
+set base $HOME/local/upc
+
+prepend-path PATH $base/bin
+prepend-path MANPATH $base/man

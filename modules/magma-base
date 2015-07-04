@@ -5,8 +5,8 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Magma standard utilities"
+set pcdir $HOME/local
 
-set pcdir /home/dsb253/local
 prepend-path PATH $pcdir/bin
 prepend-path CPATH $pcdir/include
 prepend-path LIBRARY_PATH $pcdir/lib

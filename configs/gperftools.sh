@@ -15,7 +15,7 @@ UTARBALL=$UDIRNAME.tar.gz
 UURL=http://download.savannah.gnu.org/releases/libunwind/$UTARBALL
 
 # gperftools
-DIRNAME=gperftools-2.1
+DIRNAME=gperftools-2.4
 TARBALL=$DIRNAME.tar.gz
 URL=https://gperftools.googlecode.com/files/$TARBALL
 

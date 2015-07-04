@@ -5,5 +5,7 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Lynx web browser 2.8.7"
-prepend-path PATH /share/cs-instructional/cs5220/local/lynx-2.8.7/bin
-prepend-path MANPATH /share/cs-instructional/cs5220/local/lynx-2.8.7/man
+set basedir $HOME/local/lynx-2.8.7/
+
+prepend-path PATH $basedir/bin
+prepend-path MANPATH $basedir/man

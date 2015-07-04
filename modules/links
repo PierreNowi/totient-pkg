@@ -5,5 +5,5 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Links web browser 2.8"
-prepend-path PATH /share/cs-instructional/cs5220/local/links-2.8/bin
-prepend-path MANPATH /share/cs-instructional/cs5220/local/links-2.8/man
+prepend-path PATH $HOME/local/links-2.8/bin
+prepend-path MANPATH $HOME/local/links-2.8/man

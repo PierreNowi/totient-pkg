@@ -5,13 +5,16 @@ proc ModulesHelp { } {
 }
  
 module-whatis "TAU and PDT"
-prepend-path PATH /share/cs-instructional/cs5220/local/pdt/x86_64/bin
-prepend-path PATH /share/cs-instructional/cs5220/local/tau/x86_64/bin
-prepend-path LIBRARY_PATH /share/cs-instructional/cs5220/local/pdt/x86_64/lib
-prepend-path LIBRARY_PATH /share/cs-instructional/cs5220/local/tau/x86_64/lib
-prepend-path LD_RUN_PATH /share/cs-instructional/cs5220/local/pdt/x86_64/lib
-prepend-path LD_RUN_PATH /share/cs-instructional/cs5220/local/tau/x86_64/lib
-prepend-path MANPATH /share/cs-instructional/cs5220/local/tau/man
-set TAULIBDIR /share/cs-instructional/cs5220/local/tau/x86_64/lib
+set pdt $HOME/local/pdt
+set tau $HOME/local/tau
+
+prepend-path PATH $pdt/x86_64/bin
+prepend-path PATH $tau/x86_64/bin
+prepend-path LIBRARY_PATH $pdt/x86_64/lib
+prepend-path LIBRARY_PATH $tau/x86_64/lib
+prepend-path LD_RUN_PATH $pdt/x86_64/lib
+prepend-path LD_RUN_PATH $tau/x86_64/lib
+prepend-path MANPATH $tau/man
+set TAULIBDIR $tau/x86_64/lib
 setenv TAU_MAKEFILE $TAULIBDIR/Makefile.tau-papi-mpi-pthread-pdt-openmp 
 setenv TAU_OPTIONS "-optVerbose"
