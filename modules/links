@@ -1,9 +1,0 @@
-#%Module1.0
-proc ModulesHelp { } {
-  global dotversion
-  puts stderr "Links web browser 2.8"
-}
- 
-module-whatis "Links web browser 2.8"
-prepend-path PATH $HOME/local/links-2.8/bin
-prepend-path MANPATH $HOME/local/links-2.8/man

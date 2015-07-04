@@ -1,10 +1,10 @@
 #%Module1.0
 proc ModulesHelp { } {
   global dotversion
-  puts stderr "VisIt 2.7.0"
+  puts stderr "VisIt 2.9.2"
 }
  
-module-whatis "VisIt 2.7.0"
+module-whatis "VisIt 2.9.2"
 set basepath $HOME/local/visit
 
 prepend-path PATH $basepath/bin

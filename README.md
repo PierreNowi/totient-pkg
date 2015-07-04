@@ -1,7 +1,7 @@
-# c4-pkg
+# magma-pkg
 
 This is a set of configuration scripts for maintaining the software system for
-CS 5220 on the C4 cluster.  The scripts grab packages from the web or from a
+my use on the Magma cluster.  The scripts grab packages from the web or from a
 local downloads folder, or clone a repository.  They configure and build out of
 a staging directory, and install into the shared subdirectory.  The basic
 structure is:
