@@ -4,4 +4,4 @@
 # http://libevent.org/
 
 source ./helper.sh
-stage_dl_ac https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+stage_dl_ac https://sourceforge.net/projects/levent/files/libevent/libevent-2.0/libevent-2.0.22-stable.tar.gz

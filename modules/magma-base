@@ -1,0 +1,16 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "Magma standard utilities"
+}
+ 
+module-whatis "Magma standard utilities"
+
+set pcdir /home/dsb253/local
+prepend-path PATH $pcdir/bin
+prepend-path CPATH $pcdir/include
+prepend-path LIBRARY_PATH $pcdir/lib
+prepend-path LIBRARY_PATH $pcdir/lib64
+prepend-path LD_RUN_PATH $pcdir/lib
+prepend-path LD_RUN_PATH $pcdir/lib64
+prepend-path MANPATH $pcdir/man

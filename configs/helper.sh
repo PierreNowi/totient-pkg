@@ -3,35 +3,35 @@
 # Exit on first error
 set -e
 
-# Install under cs-instructional 
+# Install under home directory
 if [ -z "$PREFIX" ]; then
-  PREFIX=/share/cs-instructional/cs5220/local
+  PREFIX=$HOME/local
 fi
 
 # Staging location
 if [ -z "$STAGING" ]; then
-  STAGING=/state/partition1/dsb253_temp/staging
+  STAGING=/tmp/dsb253/staging
 fi
 
-# C4-pkg location
-if [ -z "$C4_PKG" ]; then
-  C4_PKG=`pwd`/../
+# MAGMA-pkg location
+if [ -z "$MAGMA_PKG" ]; then
+  MAGMA_PKG=`pwd`/../
 fi
 
 # Report variable setup
 echo "# ======================="
 echo "PREFIX= $PREFIX"
 echo "STAGING=$STAGING"
-echo "C4_PKG= $C4_PKG"
+echo "MAGMA_PKG= $MAGMA_PKG"
 echo "# ======================="
 
 #
 # Set up and clear out staging area
 #
 function set_stage() {
-  if [ -f $C4_PKG/stamp/$0-stamp ] ; then
+  if [ -f $MAGMA_PKG/stamp/$0-stamp ] ; then
     echo "Already built $0.  Kill timestamp to force rebuild"
-    cat $C4_PKG/stamp/$0-stamp
+    cat $MAGMA_PKG/stamp/$0-stamp
     exit 0
   fi
   echo "Clearing staging area"
@@ -46,8 +46,8 @@ function set_stage() {
 #
 function leave_stage () {
   echo "Marking as done"
-  mkdir -p $C4_PKG/stamp
-  date > $C4_PKG/stamp/$0-stamp
+  mkdir -p $MAGMA_PKG/stamp
+  date > $MAGMA_PKG/stamp/$0-stamp
   echo "Leaving staging area"
   popd
   return 0
@@ -59,13 +59,13 @@ function leave_stage () {
 function wgetl () {
   local TARBALL=`echo $1 | sed 's/^.*\///'`
   echo $TARBALL
-  if [ ! -f $C4_PKG/archives/$TARBALL ]; then
-    mkdir -p $C4_PKG/archives
-    pushd $C4_PKG/archives/
+  if [ ! -f $MAGMA_PKG/archives/$TARBALL ]; then
+    mkdir -p $MAGMA_PKG/archives
+    pushd $MAGMA_PKG/archives/
     wget $1
     popd
   fi
-  cp $C4_PKG/archives/$TARBALL .
+  cp $MAGMA_PKG/archives/$TARBALL .
   return 0
 }
 

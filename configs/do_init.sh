@@ -2,7 +2,7 @@
 set -e
 
 # -- Start off with rpaths set appropriately
-module load cs5220-base
+module load magma-base
 
 # -- tmux lets us finish rebuilding without a window
 ./libevent.sh

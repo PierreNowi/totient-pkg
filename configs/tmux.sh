@@ -4,4 +4,4 @@
 # http://tmux.sourceforge/net/
 
 source ./helper.sh
-stage_dl_ac http://downloads.sourceforge.net/project/tmux/tmux/tmux-1.8/tmux-1.8.tar.gz
+stage_dl_ac https://github.com/tmux/tmux/releases/download/2.0/tmux-2.0.tar.gz
