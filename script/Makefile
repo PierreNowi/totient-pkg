@@ -14,5 +14,4 @@ install:
 	(cd serial; make install)
 	(cd openmp; make install)
 	(cd openmpi; make install)
-	(cd intelmpi; make install)
 	(cd upc; make install)
