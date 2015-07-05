@@ -191,13 +191,18 @@ function stage_dl_cmake() {
   set_stage_dl $1
   shift
   if echo "$@" | grep "DCMAKE_INSTALL_PREFIX" ; then
-    prefix_opt=""
+    install_prefix_opt=""
   else
-    prefix_opt="--DCMAKE_INSTALL_PREFIX=$PREFIX"
+    install_prefix_opt="-DCMAKE_INSTALL_PREFIX=$PREFIX"
+  fi
+  if echo "$@" | grep "DCMAKE_PREFIX_PATH" ; then
+    install_prefix_opt=""
+  else
+    install_prefix_opt="-DCMAKE_PREFIX_PATH=$PREFIX"
   fi
   mkdir build
   cd build
-  cmake $prefix_opt $@ ..
+  cmake $install_prefix_opt $@ ..
   make
   make install
   leave_stage
