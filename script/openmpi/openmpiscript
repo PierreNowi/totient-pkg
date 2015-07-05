@@ -19,7 +19,7 @@
 ##**************************************************************
 
 # Set up default paths
-MPDIR=/share/cs-instructional/cs5220/local/openmpi-1.6.5
+MPDIR=$HOME/local/openmpi-1.8.6
 PATH=$MPDIR/bin:.:$PATH
 export PATH
 

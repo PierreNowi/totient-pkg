@@ -1,5 +1,5 @@
 
-APCPATH=/share/cs-instructional/cs5220
+APCPATH=$(HOME)
 
 SCRIPTS=setup_ipython_htc.sh setup_ipython_mpi.sh setup_ipython_nbserver.sh \
 	setup.sh vars.sh vars.csh

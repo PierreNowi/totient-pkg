@@ -1,7 +1,7 @@
 cat >> $HOME/.bashrc <<EOF
 
 # Add CS5220 setup
-source /share/cs-instructional/cs5220/script/vars.sh
+source $HOME/script/vars.sh
 EOF
 
 cat >> $HOME/.bash_profile <<EOF

@@ -27,7 +27,7 @@ NTHREAD=$1
 shift
 
 # Set up default paths
-UPCDIR=/share/cs-instructional/cs5220/local/upc
+UPCDIR=$HOME/local/upc
 PATH=$UPCDIR/bin:.:$PATH
 export PATH
 

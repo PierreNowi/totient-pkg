@@ -3,7 +3,7 @@
 # Anaconda post-install setup.  This is my recollection of what
 # I did, but has not actually been tested...
 
-APATH=/share/cs-instructional/cs5220/local/anaconda
+APATH=$HOME/local/anaconda
 export PATH=$APATH/bin:$PATH
 
 # Make sure we can get pip to play nicely with everything

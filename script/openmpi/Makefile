@@ -1,5 +1,5 @@
-APCPATH=/share/cs-instructional/cs5220
-MPIPATH=$(APCPATH)/local/openmpi-1.6.5
+APCPATH=$(HOME)
+MPIPATH=$(APCPATH)/local/openmpi-1.8.6
 
 .PHONY: install
 

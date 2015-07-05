@@ -1,4 +1,4 @@
-APCPATH=/share/cs-instructional/cs5220
+APCPATH=$(HOME)
 
 .PHONY: install
 
