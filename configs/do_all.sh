@@ -2,6 +2,8 @@
 set -e
 
 # -- Most everything goes into the base package -- set up appropriate path
+#    Otherwise we want the base system
+module purge
 module load magma-base
 
 # -- GCC 4.9.3 + wrappers
@@ -73,7 +75,7 @@ module unload openblas
 # -- HDF5 and NetCDF libraries
 ./szip.sh
 ./hdf5.sh
-./netcdf.sh
+#./netcdf.sh
 
 # -- Profilers and the like
 ./libdwarf.sh
