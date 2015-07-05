@@ -182,3 +182,25 @@ function run_dl_ac () {
 
   return 0
 }
+
+#
+# stage_dl_cmake URL OPTS
+# Stage and download with CMake
+#
+function stage_dl_cmake() {
+  set_stage_dl $1
+  shift
+  if echo "$@" | grep "DCMAKE_INSTALL_PREFIX" ; then
+    prefix_opt=""
+  else
+    prefix_opt="--DCMAKE_INSTALL_PREFIX=$PREFIX"
+  fi
+  mkdir build
+  cd build
+  cmake $prefix_opt $@ ..
+  make
+  make install
+  leave_stage
+  return 0
+}
+
