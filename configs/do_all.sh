@@ -58,6 +58,8 @@ module load gcc-4.9.3
 ./boost.sh
 
 # -- Standard numerical libraries
+module load openblas
+module load lapack
 ./fftw.sh
 ./arpack-ng.sh
 ./metis.sh
@@ -65,6 +67,8 @@ module load gcc-4.9.3
 ./eigen.sh
 ./armadillo.sh
 ./gsl.sh
+module unload lapack
+module unload openblas
 
 # -- HDF5 and NetCDF libraries
 ./szip.sh
