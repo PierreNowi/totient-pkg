@@ -15,10 +15,16 @@ module load gcc-4.9.3
 ./libevent.sh
 ./tmux.sh
 
+# -- Updated git
+./git.sh
+
+# -- CMake
+./curl.sh
+./cmake.sh 
+
 # -- GraphViz, Doxygen, and curl with SSL for CMake (and others)
 ./graphviz.sh
 ./doxygen.sh
-./curl.sh
 
 # -- Most recent autoconf/automake/libtool
 ./patchelf.sh
@@ -26,9 +32,6 @@ module load gcc-4.9.3
 ./libtool.sh
 ./autoconf.sh
 ./automake.sh
-
-# -- CMake
-./cmake.sh 
 
 # -- Build valgrind
 ./valgrind.sh
