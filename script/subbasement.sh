@@ -1,8 +1,8 @@
-# Base for the CS 5220 submission scripts (csub, ompsub, mpisub, upcsub)
+# Base for the magma submission scripts (csub, ompsub, mpisub, upcsub)
 # Input: subname
 
 done_parsing=false
-default_reqs='requirements = (C4_GROUP == "cs") || (C4_GROUP == "cs-instructional")'
+default_reqs=''
 NP=1
 hasa=""
 hast=""
@@ -69,7 +69,7 @@ fi
 
 done
 
-APCPATH=/share/cs-instructional/cs5220
+APCPATH=$HOME
 BASENAME=$subname-$$
 SUBFILE=$BASENAME.sub
 

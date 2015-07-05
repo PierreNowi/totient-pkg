@@ -7,9 +7,9 @@ SCRIPTS=setup_ipython_htc.sh setup_ipython_mpi.sh setup_ipython_nbserver.sh \
 .PHONY: install
 
 install:
-	install -d $(APCPATH)/script
+	install -d $(APCPATH)/local/script
 	install -d $(APCPATH)/local/etc
-	install -t $(APCPATH)/script $(SCRIPTS) 
+	install -t $(APCPATH)/local/script $(SCRIPTS) 
 	install -t $(APCPATH)/local/etc subbasement.sh
 	(cd serial; make install)
 	(cd openmp; make install)
