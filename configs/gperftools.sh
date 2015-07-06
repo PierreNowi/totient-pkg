@@ -17,7 +17,7 @@ UURL=http://download.savannah.gnu.org/releases/libunwind/$UTARBALL
 # gperftools
 DIRNAME=gperftools-2.4
 TARBALL=$DIRNAME.tar.gz
-URL=https://gperftools.googlecode.com/files/$TARBALL
+URL=https://googledrive.com/host/0B6NtGsLhIcf7MWxMMF9JdTN3UVk/$TARBALL
 
 source ./helper.sh
 set_stage

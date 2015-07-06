@@ -5,4 +5,8 @@ proc ModulesHelp { } {
 }
  
 module-whatis "Anaconda Python distribution"
-prepend-path PATH $env(HOME)/local/anaconda/bin
+set basedir $env(HOME)/local/anaconda
+
+prepend-path PATH $basedir/bin
+prepend-path LIBRARY_PATH $basedir/lib
+prepend-path LD_RUN_PATH $basedir/lib

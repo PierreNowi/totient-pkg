@@ -3,12 +3,12 @@
 # SLEPc
 
 source ./helper.sh
-set_stage_dl http://www.grycap.upv.es/slepc/download/slepc-3.6.0.tar.gz
+set_stage_dl http://slepc.upv.es/download/download.php?filename=slepc-3.6.0.tar.gz
 
 export SLEPC_DIR=$PWD
 module load petsc
 ./configure --prefix=$PREFIX/$DIRNAME
-make SLEPC_DIR=$PWD PETSC_DIR=$PETSC_DIR PETSC_ARCH=arch-installed-petsc 
-make SLEPC_DIR=$PWD PETSC_DIR=$PETSC_DIR PETSC_ARCH=arch-installed-petsc install
+make SLEPC_DIR=$PWD PETSC_DIR=$PETSC_DIR 
+make SLEPC_DIR=$PWD PETSC_DIR=$PETSC_DIR install
 
 leave_stage

@@ -1,19 +1,26 @@
 #!/bin/sh
 #
 # LLVM
-
+#
+# DSB: Note that gcc_personality_v0 in 3.6.1 has a problem --
+#   the call to _Unwind_GetLanguageSpecificData in
+#   llvm/projects/compiler-rt/lib/builtins/gcc_personality_v0.c
+#   requires a cast to uint8_t*
+#
 VER=3.6.1
-STZ=$VER.src.tar.gz
+STZ=$VER.src.tar.xz
 BASE_URL=http://llvm.org/releases/$VER
 
 function wget_llvm () {
-  wgetl $BASE_URL/$1-$VER.src.tar.gz
-  tar -xzf $1-$VER.src.tar.gz
+  wgetl $BASE_URL/$1-$VER.src.tar.xz
+  tar -xJf $1-$VER.src.tar.xz
   mv $1-$VER.src $2
 }
 
 source ./helper.sh
 set_stage
+module load anaconda
+export LD_LIBRARY_PATH=$HOME/local/anaconda/lib:$LD_LIBRARY_PATH
 
 wget_llvm llvm llvm
 
@@ -35,13 +42,9 @@ cd llvm
 mkdir build
 cd build
 
-module unload anaconda
-CC=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/gcc \
-CXX=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/g++ \
-CPP=/share/cs-instructional/cs5220/local/gcc-4.8.2/bin/cpp \
 ../configure -prefix=$PREFIX/llvm-$VER \
-  --with-gcc-toolchain=$PREFIX/gcc-4.8.2 \
-  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-4.8.2/lib64 \
+  --with-gcc-toolchain=$PREFIX/gcc-4.9.3 \
+  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-4.9.3/lib64 \
   --enable-cxx11
 
 make

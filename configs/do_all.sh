@@ -79,12 +79,13 @@ module unload openblas
 
 # -- Profilers and the like
 ./libdwarf.sh
-./dyninst.sh
+# ./dyninst.sh
 ./papi.sh
-./hwloc.sh
+# ./hwloc.sh
 
 # -- Lua
 ./lua.sh
+./lrocks.sh
 ./ldoc.sh
 
 # -- FFMPEG (enough for coding vids)
@@ -93,15 +94,15 @@ module unload openblas
 ./ffmpeg.sh
 
 # -- PDT and TAU (module)
-./pdt.sh
-./tau.sh
+# ./pdt.sh
+# ./tau.sh
 
 # -- gperftools (module)
 ./gperftools.sh
 
 # -- IPM (module)
 ./ploticus.sh
-./ipm.sh
+# ./ipm.sh
 
 # -- For building LLVM and CLang (module)
 ./llvm.sh
@@ -112,6 +113,12 @@ module unload openblas
 
 # -- Build UPC (module)
 ./upc.sh
+
+# -- Remainder depends on OpenBLAS / LAPACK
+export LD_LIBRARY_PATH=$PREFIX/anaconda/lib:$LD_LIBRARY_PATH
+module load anaconda
+module load openblas
+module load lapack
 
 # -- Numerical frameworks (modules)
 ./petsc.sh

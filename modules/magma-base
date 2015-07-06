@@ -14,3 +14,6 @@ prepend-path LIBRARY_PATH $pcdir/lib64
 prepend-path LD_RUN_PATH $pcdir/lib
 prepend-path LD_RUN_PATH $pcdir/lib64
 prepend-path MANPATH $pcdir/man
+
+setenv LUA_PATH "$pcdir/share/lua/5.3/?.lua;$pcdir/share/lua/5.3/?/init.lua;;"
+setenv LUA_CPATH "$pcdir/lib/lua/5.3/?.so;;"
