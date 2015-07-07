@@ -26,6 +26,12 @@ export LUA_CPATH="$MAGMA_BASE/lib/lua/5.3/?.so"
 
 # Add Lua module system
 
-MODULEPATH=$MAGMA_BASE/modules
+export MODULEPATH=$MAGMA_BASE/modules
 source $LMOD/init/bash
 
+# Add EasyBuild
+
+EBPATH=$HOME/.local/easybuild
+export MODULEPATH=$MODULEPATH:$EBPATH/modules/all
+export EASYBUILD_INSTALLPATH=$EBPATH
+export EASYBUILD_MODULES_TOOL=Lmod
