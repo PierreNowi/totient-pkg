@@ -33,5 +33,3 @@ source $LMOD/init/bash
 
 EBPATH=$HOME/.local/easybuild
 export MODULEPATH=$MODULEPATH:$EBPATH/modules/all
-export EASYBUILD_INSTALLPATH=$EBPATH
-export EASYBUILD_MODULES_TOOL=Lmod
