@@ -85,7 +85,7 @@ module unload openblas
 ./libdwarf.sh
 # ./dyninst.sh
 ./papi.sh
-# ./hwloc.sh
+./hwloc.sh
 
 # -- FFMPEG (enough for coding vids)
 ./yasm.sh
