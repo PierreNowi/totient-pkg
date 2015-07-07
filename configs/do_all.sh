@@ -83,7 +83,7 @@ module unload openblas
 
 # -- Profilers and the like
 ./libdwarf.sh
-# ./dyninst.sh
+./dyninst.sh
 ./papi.sh
 ./hwloc.sh
 
