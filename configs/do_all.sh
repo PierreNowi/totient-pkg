@@ -4,7 +4,6 @@ set -e
 # -- Most everything goes into the base package -- set up appropriate path
 #    Otherwise we want the base system
 module purge
-module load magma-base
 
 # -- GCC 4.9.3 + wrappers
 ./gcc.sh
@@ -16,6 +15,11 @@ module load gcc-4.9.3
 # -- tmux lets us finish rebuilding without a window
 ./libevent.sh
 ./tmux.sh
+
+# -- Lua and module system
+./lua.sh
+./lrocks.sh
+./ldoc.sh
 
 # -- Updated git
 ./git.sh
@@ -83,11 +87,6 @@ module unload openblas
 ./papi.sh
 # ./hwloc.sh
 
-# -- Lua
-./lua.sh
-./lrocks.sh
-./ldoc.sh
-
 # -- FFMPEG (enough for coding vids)
 ./yasm.sh
 ./x264.sh
@@ -115,8 +114,6 @@ module unload openblas
 ./upc.sh
 
 # -- Remainder depends on OpenBLAS / LAPACK
-export LD_LIBRARY_PATH=$PREFIX/anaconda/lib:$LD_LIBRARY_PATH
-module load anaconda
 module load openblas
 module load lapack
 

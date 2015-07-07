@@ -2,7 +2,7 @@
 APCPATH=$(HOME)
 
 SCRIPTS=setup_ipython_htc.sh setup_ipython_mpi.sh setup_ipython_nbserver.sh \
-	setup.sh vars.sh vars.csh
+	setup.sh magma-base.sh vars.sh vars.csh
 
 .PHONY: install
 
