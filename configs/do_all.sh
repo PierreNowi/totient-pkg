@@ -4,6 +4,7 @@ set -e
 # -- Most everything goes into the base package -- set up appropriate path
 #    Otherwise we want the base system
 module purge
+module load localbase
 
 # -- GCC 4.9.3 + wrappers
 ./gcc.sh
@@ -64,8 +65,6 @@ module load gcc-4.9.3
 ./boost.sh
 
 # -- Standard numerical libraries
-module load openblas
-module load lapack
 ./fftw.sh
 ./arpack-ng.sh
 ./metis.sh
@@ -73,8 +72,6 @@ module load lapack
 ./eigen.sh
 ./armadillo.sh
 ./gsl.sh
-module unload lapack
-module unload openblas
 
 # -- HDF5 and NetCDF libraries
 ./szip.sh
@@ -117,11 +114,6 @@ module unload openblas
 # -- Build UPC (module)
 ./upc.sh
 
-# -- Remainder depends on OpenBLAS / LAPACK and maybe MPI
-module load openblas
-module load lapack
-module load openmpi-1.8.6
-
 # -- Numerical frameworks (modules)
 ./petsc.sh
 ./slepc.sh
@@ -129,5 +121,5 @@ module load openmpi-1.8.6
 ./trilinos.sh
 
 # -- Build deal.II (module)
-./dealii.sh
+#./dealii.sh
 

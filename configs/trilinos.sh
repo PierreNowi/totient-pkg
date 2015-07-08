@@ -26,6 +26,10 @@ for pkg in `echo $PKG_OFF` ; do
   pkgs="$pkgs -D Trilinos_ENABLE_$pkg:BOOL=OFF"
 done
 
+module load openblas
+module load lapack
+module load openmpi-1.8.6
+
 source ./helper.sh
 set_stage_dl http://trilinos.csbsju.edu/download/files/trilinos-12.0.1-Source.tar.bz2
 

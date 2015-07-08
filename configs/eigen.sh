@@ -3,6 +3,9 @@
 # Eigen -- C++ template library for linear algebra
 # http://eigen.tuxfamily.org/
 
+module load openblas
+module load lapack
+
 source ./helper.sh
 set_stage_dl http://bitbucket.org/eigen/eigen/get/3.2.5.tar.bz2
 

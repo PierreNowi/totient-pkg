@@ -4,10 +4,11 @@
 
 source ./helper.sh
 set_stage
+LUA=lua-5.3.1
 
-curl -O http://www.lua.org/ftp/lua-5.3.1.tar.gz
-tar zxf lua-5.3.1.tar.gz
-cd lua-5.3.1
-make INSTALL_TOP=$PREFIX linux test install
+curl -O http://www.lua.org/ftp/$LUA.tar.gz
+tar zxf $LUA.tar.gz
+cd $LUA
+make INSTALL_TOP=$PREFIX/$LUA linux test install
 
 leave_stage
