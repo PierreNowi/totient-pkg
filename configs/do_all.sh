@@ -80,10 +80,14 @@ module unload openblas
 ./szip.sh
 ./hdf5.sh
 ./netcdf.sh
+./matio.sh
+
+# -- GLM (used by Trilionos)
+./glm.sh
 
 # -- Profilers and the like
 ./libdwarf.sh
-./dyninst.sh
+# ./dyninst.sh
 ./papi.sh
 ./hwloc.sh
 

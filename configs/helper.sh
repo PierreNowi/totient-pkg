@@ -99,6 +99,12 @@ function set_stage_dl () {
     mkdir tmp
     cd tmp
     tar -xjf ../$TARBALL
+  elif echo $TARBALL | grep -q '[.]zip$' ; then
+    echo "Fetching $TARBALL"
+    wgetl $1
+    mkdir tmp
+    cd tmp
+    unzip ../$TARBALL
   fi
 
   # Set the dirname (if not already set)

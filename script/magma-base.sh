@@ -31,5 +31,5 @@ source $LMOD/init/bash
 
 # Add EasyBuild
 
-EBPATH=$HOME/.local/easybuild
-export MODULEPATH=$MODULEPATH:$EBPATH/modules/all
+#EBPATH=$HOME/.local/easybuild
+#export MODULEPATH=$EBPATH/modules/all:$MODULEPATH
