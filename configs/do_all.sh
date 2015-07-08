@@ -20,6 +20,7 @@ module load gcc-4.9.3
 # -- Lua and module system
 ./lua.sh
 ./lrocks.sh
+./lmod.sh
 ./ldoc.sh
 
 # -- Updated git

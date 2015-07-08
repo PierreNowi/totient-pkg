@@ -2,6 +2,8 @@
 #
 # LuaRocks
 
+module load lua-5.3.1
+
 source ./helper.sh
 LUA=lua-5.3.1
 stage_dl_ac \
