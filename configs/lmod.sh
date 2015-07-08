@@ -7,9 +7,6 @@ module load lua-5.3.1
 source ./helper.sh
 
 eval `luarocks path`
-luarocks install luaposix
-luarocks install luafilesystem
-
 LUA=lua-5.3.1
 stage_dl_ac \
   https://github.com/TACC/Lmod.git \

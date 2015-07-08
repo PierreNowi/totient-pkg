@@ -13,3 +13,7 @@ stage_dl_ac \
   --rocks-tree=$PREFIX/$LUA/lib/luarocks \
   --with-lua=$PREFIX/$LUA \
   --lua-version=5.3 
+
+luarocks install luaposix
+luarocks install luafilesystem
+
