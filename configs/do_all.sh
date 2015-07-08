@@ -117,9 +117,10 @@ module unload openblas
 # -- Build UPC (module)
 ./upc.sh
 
-# -- Remainder depends on OpenBLAS / LAPACK
+# -- Remainder depends on OpenBLAS / LAPACK and maybe MPI
 module load openblas
 module load lapack
+module load openmpi-1.8.6
 
 # -- Numerical frameworks (modules)
 ./petsc.sh

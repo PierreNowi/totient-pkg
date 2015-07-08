@@ -3,7 +3,28 @@
 # Trilinos
 # http://trilinos.sandia.gov/
 #
-# Note: Need up to date SWIG (via conda)
+# Notes:
+# - For PyTrilinos, need up to date SWIG (via conda)
+# - We explicitly enable/disable packages rather than building all.
+
+PKG_ON="
+Epetra EpetraExt Tpetra Kokkos
+AztechOO IFPACK Ifpack2 ML Teko
+Teuchos AztecOO Belos Komplex Amesos Amesos2
+NOX LOCA ROL MOOCHO Piro Rhythmos GlobiPack OptiPack
+Anasazi PyTrilinos"
+
+# These packages are explicitly disabled
+PKG_OFF=
+
+#
+pkgs=""
+for pkg in `echo $PKG_ON` ; do
+  pkgs="$pkgs -D Trilinos_ENABLE_$pkg:BOOL=ON"
+done
+for pkg in `echo $PKG_OFF` ; do
+  pkgs="$pkgs -D Trilinos_ENABLE_$pkg:BOOL=OFF"
+done
 
 source ./helper.sh
 set_stage_dl http://trilinos.csbsju.edu/download/files/trilinos-12.0.1-Source.tar.bz2
@@ -26,12 +47,13 @@ cmake \
 -D LAPACK_LIBRARY_DIRS:FILEPATH="$PREFIX/lapack-3.5.0/lib" \
 -D LAPACK_LIBRARY_NAMES:STRING="liblapack.so" \
 \
--D TPL_ENABLE_MPI:BOOL=ON \
+-D TPL_ENABLE_MPI:BOOL=OFF \
 -D CMAKE_Fortran_FLAGS:STRING="-O5" \
 -D MEMORYCHECK_COMMAND:FILEPATH=$PREFIX/bin/valgrind \
 -D DART_TESTING_TIMEOUT:STRING=600 \
 -D CMAKE_VERBOSE_MAKEFILE:BOOL=TRUE \
--D Trilinos_ENABLE_ALL_PACKAGES:BOOL=ON \
+\
+$pkgs \
 -D Trilinos_ENABLE_EXPLICIT_INSTANTIATION:BOOL=ON \
 -D TPL_ENABLE_Boost:BOOL=ON \
 ..
