@@ -12,10 +12,10 @@ Epetra EpetraExt Tpetra Kokkos
 AztechOO IFPACK Ifpack2 ML Teko
 Teuchos AztecOO Belos Komplex Amesos Amesos2
 NOX LOCA ROL MOOCHO Piro Rhythmos GlobiPack OptiPack
-Anasazi PyTrilinos"
+Anasazi"
 
 # These packages are explicitly disabled
-PKG_OFF=
+PKG_OFF=""
 
 #
 pkgs=""
