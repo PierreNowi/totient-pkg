@@ -3,6 +3,11 @@
 # deal.II
 # http://www.dealii.org/
 
+module load openblas
+module load lapack
+module load suitesparse
+module load trilinos-serial
+
 source ./helper.sh
 set_stage_dl https://github.com/dealii/dealii/releases/download/v8.2.1/dealii-8.2.1.tar.gz
 

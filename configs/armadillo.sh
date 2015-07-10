@@ -5,6 +5,7 @@
 
 module load openblas
 module load lapack
+module load suitesparse
 
 source ./helper.sh
 set_stage_dl http://downloads.sourceforge.net/project/arma/armadillo-5.200.2.tar.gz

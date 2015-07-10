@@ -6,6 +6,7 @@ DIRNAME=petsc-3.6.0
 
 module load openblas
 module load lapack
+module load suitesparse
 module load openmpi-1.8.6
 
 source ./helper.sh

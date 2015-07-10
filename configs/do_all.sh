@@ -122,5 +122,5 @@ module load gcc-4.9.3
 ./trilinos.sh
 
 # -- Build deal.II (module)
-#./dealii.sh
+./dealii.sh
 

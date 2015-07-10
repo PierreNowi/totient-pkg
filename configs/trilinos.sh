@@ -28,6 +28,7 @@ done
 
 module load openblas
 module load lapack
+module load suitesparse
 module load openmpi-1.8.6
 
 source ./helper.sh
