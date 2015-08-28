@@ -3,9 +3,9 @@
 # Exit on first error
 set -e
 
-# Install under home directory
+# Install under /share/apps
 if [ -z "$PREFIX" ]; then
-  PREFIX=$HOME/local
+  PREFIX=/share/apps
 fi
 
 # Staging location
@@ -14,24 +14,24 @@ if [ -z "$STAGING" ]; then
 fi
 
 # MAGMA-pkg location
-if [ -z "$MAGMA_PKG" ]; then
-  MAGMA_PKG=`pwd`/../
+if [ -z "$TOTIENT_PKG" ]; then
+  TOTIENT_PKG=`pwd`/../
 fi
 
 # Report variable setup
 echo "# ======================="
 echo "PREFIX= $PREFIX"
 echo "STAGING=$STAGING"
-echo "MAGMA_PKG= $MAGMA_PKG"
+echo "TOTIENT_PKG= $TOTIENT_PKG"
 echo "# ======================="
 
 #
 # Set up and clear out staging area
 #
 function set_stage() {
-  if [ -f $MAGMA_PKG/stamp/$0-stamp ] ; then
+  if [ -f $TOTIENT_PKG/stamp/$0-stamp ] ; then
     echo "Already built $0.  Kill timestamp to force rebuild"
-    cat $MAGMA_PKG/stamp/$0-stamp
+    cat $TOTIENT_PKG/stamp/$0-stamp
     exit 0
   fi
   echo "Clearing staging area"
@@ -46,8 +46,8 @@ function set_stage() {
 #
 function leave_stage () {
   echo "Marking as done"
-  mkdir -p $MAGMA_PKG/stamp
-  date > $MAGMA_PKG/stamp/$0-stamp
+  mkdir -p $TOTIENT_PKG/stamp
+  date > $TOTIENT_PKG/stamp/$0-stamp
   echo "Leaving staging area"
   popd
   return 0
@@ -59,13 +59,13 @@ function leave_stage () {
 function wgetl () {
   local TARBALL=`echo $1 | sed 's/^.*\///'`
   echo $TARBALL
-  if [ ! -f $MAGMA_PKG/archives/$TARBALL ]; then
-    mkdir -p $MAGMA_PKG/archives
-    pushd $MAGMA_PKG/archives/
+  if [ ! -f $TOTIENT_PKG/archives/$TARBALL ]; then
+    mkdir -p $TOTIENT_PKG/archives
+    pushd $TOTIENT_PKG/archives/
     wget $1
     popd
   fi
-  cp $MAGMA_PKG/archives/$TARBALL .
+  cp $TOTIENT_PKG/archives/$TARBALL .
   return 0
 }
 

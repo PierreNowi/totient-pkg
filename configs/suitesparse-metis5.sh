@@ -9,7 +9,7 @@ module load lapack
 source ./helper.sh
 set_stage_dl http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.4.tar.gz
 
-patch -p1 -i $MAGMA_PKG/patches/suitesparse-metis5.patch
+patch -p1 -i $TOTIENT_PKG/patches/suitesparse-metis5.patch
 cat >> SuiteSparse_config/SuiteSparse_config.mk <<EOF
 # ============ Added variables =====================
 INSTALL_LIB = $PREFIX/lib
