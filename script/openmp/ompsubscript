@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# Trampoline for csub.
-
-export OMP_NUM_THREADS=$1
-shift
-
-exec "$@"
