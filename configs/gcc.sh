@@ -1,6 +1,9 @@
 #!/bin/sh
 #
 # GCC
+#
+# NB: There is not enough space in /tmp to compile this on
+#     on the head node.  I used en-totient-02 for the build.
 
 VER=gcc-5.2.0
 source ./helper.sh
