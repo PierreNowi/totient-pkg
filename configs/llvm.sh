@@ -7,7 +7,7 @@
 #   llvm/projects/compiler-rt/lib/builtins/gcc_personality_v0.c
 #   requires a cast to uint8_t*
 #
-VER=3.6.1
+VER=3.6.2
 STZ=$VER.src.tar.xz
 BASE_URL=http://llvm.org/releases/$VER
 
@@ -42,16 +42,16 @@ cd llvm
 mkdir build
 cd build
 
-../configure -prefix=$PREFIX/llvm-$VER \
-  --with-gcc-toolchain=$PREFIX/gcc-4.9.3 \
-  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-4.9.3/lib64 \
+../configure -prefix=$PREFIX/llvm-$VER-gcc-5.2.0 \
+  --with-gcc-toolchain=$PREFIX/gcc-5.2.0 \
+  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-5.2.0/lib64 \
   --enable-cxx11
 
 make
 make install
 
-mkdir -p $PREFIX/llvm-$VER-analyzer/
-cp -R ../tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer/
-cp -R ../tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer/
+mkdir -p $PREFIX/llvm-$VER-analyzer-gcc-5.2.0/
+cp -R ../tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer-gcc-5.2.0/
+cp -R ../tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer-gcc-5.2.0/
 
 leave_stage
