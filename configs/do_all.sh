@@ -4,35 +4,29 @@ set -e
 # -- Most everything goes into the base package -- set up appropriate path
 #    Otherwise we want the base system
 module purge
-module load localbase
 
-# -- GCC 4.9.3 + wrappers
+# -- Up-to-date binutils
+./binutils.sh
+
+# -- GCC 5.2.0 + wrappers
 ./gcc.sh
 ./gcc_wrapper.sh
 
 # -- Let's build everything else with the new GCC
-module load gcc-4.9.3
-
-# -- tmux lets us finish rebuilding without a window
-./libevent.sh
-./tmux.sh
-
-# -- Lua and module system
-./lua.sh
-./lrocks.sh
-./lmod.sh
-./ldoc.sh
+module load gcc/5.2.0
+module load utils
 
 # -- Updated git
+./curl.sh
+./expat.sh
 ./git.sh
 
 # -- CMake
-./curl.sh
 ./cmake.sh 
 
 # -- GraphViz, Doxygen, and curl with SSL for CMake (and others)
-./graphviz.sh
-./doxygen.sh
+#./graphviz.sh
+#./doxygen.sh
 
 # -- Most recent autoconf/automake/libtool
 ./patchelf.sh
@@ -42,7 +36,7 @@ module load gcc-4.9.3
 ./automake.sh
 
 # -- Build valgrind
-./valgrind.sh
+#./valgrind.sh
 
 # -- For building current CLang
 ./libedit.sh
@@ -50,7 +44,7 @@ module load gcc-4.9.3
 # -- libunwind (useful for mpiP)
 ./libunwind.sh
 
-# -- OpenMPI 1.8.6 (module)
+# -- OpenMPI 1.10.0 (module)
 ./openmpi.sh
 
 # -- OpenBLAS (module)
@@ -64,6 +58,8 @@ module load gcc-4.9.3
 
 # -- Boost
 ./boost.sh
+
+exit 0
 
 # -- Standard numerical libraries
 ./fftw.sh
