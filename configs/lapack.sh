@@ -5,14 +5,12 @@
 
 source ./helper.sh
 set_stage_dl http://www.netlib.org/lapack/lapack-3.5.0.tgz
-export LD_LIBRARY_PATH=$PREFIX/OpenBLAS/lib:$LD_LIBRARY_PATH
 
 # Build shared libraries
 mkdir build_shared
 cd build_shared
 cmake \
-  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME \
-  -D USE_OPTIMIZED_BLAS=ON \
+  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME-gcc-5.2.0 \
   -D LAPACKE=ON \
   ..
 make
@@ -23,9 +21,8 @@ cd ..
 mkdir build_static
 cd build_static
 cmake \
-  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME \
+  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME-gcc-5.2.0 \
   -D BUILD_SHARED_LIBS=ON \
-  -D USE_OPTIMIZED_BLAS=ON \
   -D LAPACKE=ON \
   ..
 make
