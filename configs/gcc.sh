@@ -2,7 +2,7 @@
 #
 # GCC
 
-VER=gcc-4.9.3
+VER=gcc-5.2.0
 source ./helper.sh
 
 # -- Set up paths
@@ -25,8 +25,9 @@ cd objdir
 $PWD/../$VER/configure --prefix=$PREFIX/$VER \
                        --enable-languages=c,c++,fortran,go \
                        --disable-multilib \
-                       --program-suffix=-4.9.3
+                       --program-suffix=-5.2.0
 make
+mkdir -p $PREFIX/$VER
 make install
 
 leave_stage
