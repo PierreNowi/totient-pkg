@@ -7,33 +7,25 @@ MODULES= \
 	python/2.7 \
 	python/3.4.3 \
 	psxe/2015 \
-	gcc/5.2.0 \
-	openmpi/1.8.8-gcc-4.4.7 \
-        openmpi/1.10.0-gcc-4.9.2 \
-        openmpi/1.10.0-gcc-5.2.0 \
-	openblas/gcc-4.9.2 \
-	openblas/gcc-5.2.0 \
-	lapack/3.5.0-gcc-4.9.2 \
-	lapack/3.5.0-gcc-5.2.0 \
-	boost/1.59.0-gcc-4.9.2 \
-	suitesparse/4.4.5-gcc-4.9.2
+	gcc/5.2.0 
 
-.PHONY: all install local
+.PHONY: install build
 
-all:
-	echo "targets: install or local"
-
-install:
+install: build
 	for p in $(MDIRS) ; do mkdir -p /share/modulefiles/$$p ; done
 	for f in $(MODULES) ; do \
 		p=`echo $$f | sed 's/[/].*$$//'` ; \
 		install -m 644 -D $$f /share/modulefiles/$$p ; \
 	done
 
-local:
-	for p in $(MDIRS) ; do mkdir -p $(HOME)/privatemodules/$$p ; done
-	for f in $(MODULES) ; do \
-		p=`echo $$f | sed 's/[/].*$$//'` ; \
-		install -m 644 -D $$f $(HOME)/privatemodules/$$p ; \
-	done
-
+build:
+	./build.sh openmpi gcc-4.9.2  1.10.0
+	./build.sh openmpi icc-15.0.3 1.10.0
+	./build.sh openblas gcc-4.9.2
+	./build.sh openblas icc-15.0.3
+	./build.sh lapack gcc-4.9.2  3.5.0
+	./build.sh lapack icc-15.0.3 3.5.0
+	./build.sh boost gcc-4.9.2  3.5.0
+	./build.sh boost icc-15.0.3 3.5.0
+	./build.sh suitesparse gcc-4.9.2  4.4.5
+	./build.sh suitesparse icc-15.0.3 4.4.5

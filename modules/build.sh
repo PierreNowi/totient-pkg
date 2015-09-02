@@ -2,8 +2,8 @@
 #
 # Generate module file from shell script output
 #
-export VER=$1
 export TOOLCHAIN=$2
+export VER=$3
 export BUILD_TAG=$VER-$TOOLCHAIN
 mkdir -p /tmp/dsb253/module
 mkdir -p /share/modulefiles/$1
