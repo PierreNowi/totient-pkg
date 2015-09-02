@@ -28,16 +28,16 @@ tar -xzf $UTARBALL
 tar -xzf $TARBALL
 
 cd $UDIRNAME
-./configure --prefix=$PREFIX/$DIRNAME
+./configure --prefix=$PREFIX/$DIRNAME-gcc-4.9.2
 make
 make install
 cd ..
 
-export LD_RUN_PATH=$PREFIX/$DIRNAME/lib:$LD_LIBRARY_PATH
-export LIBRARY_PATH=$PREFIX/$DIRNAME/lib:$LIBRARY_PATH
-export CPATH=$PREFIX/$DIRNAME/include:$CPATH
+export LD_RUN_PATH=$PREFIX/$DIRNAME-gcc-4.9.2/lib:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$PREFIX/$DIRNAME-gcc-4.9.2/lib:$LIBRARY_PATH
+export CPATH=$PREFIX/$DIRNAME-gcc-4.9.2/include:$CPATH
 cd $DIRNAME
-./configure --prefix=$PREFIX/$DIRNAME
+./configure --prefix=$PREFIX/$DIRNAME-gcc-4.9.2
 make
 make install
 cd ..
