@@ -3,8 +3,8 @@
 # LAPACK -- LAPACK library
 # http://www.netlib.org/lapack/
 
-if [ "$#" -ne 1 ] || ! [ -d "$1" ]; then
-  echo "Usage: $0 DIRECTORY" >&2
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 tag" >&2
   exit 1
 fi
 
