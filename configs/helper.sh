@@ -13,23 +13,39 @@ if [ -z "$STAGING" ]; then
   STAGING=/tmp/dsb253/staging
 fi
 
-# MAGMA-pkg location
+# totient-pkg location
 if [ -z "$TOTIENT_PKG" ]; then
   TOTIENT_PKG=`pwd`/../
+fi
+
+# Build tag
+if [ -z "$BUILD_TAG" ]; then
+  BUILD_TAG="generic"
 fi
 
 # Report variable setup
 echo "# ======================="
 echo "PREFIX= $PREFIX"
 echo "STAGING=$STAGING"
-echo "TOTIENT_PKG= $TOTIENT_PKG"
+echo "TOTIENT_PKG=$TOTIENT_PKG"
+echo "BUILD_TAG=$BUILD_TAG"
 echo "# ======================="
+
+
+#
+# Add, remove, or test a stamp
+#
+function stamp() {
+    python $TOTIENT_PKG/config/check_stamp.py $TOTIENT_PKG/stamp.yml $1 \
+	`echo $0 | sed -e 's/.sh$//'-$BUILD_TAG
+}
 
 #
 # Set up and clear out staging area
 #
 function set_stage() {
-  if [ -f $TOTIENT_PKG/stamp/$0-stamp ] ; then
+  #if [ -f $TOTIENT_PKG/stamp/$0-stamp ] ; then
+  if stamp test ; then
     echo "Already built $0.  Kill timestamp to force rebuild"
     cat $TOTIENT_PKG/stamp/$0-stamp
     exit 0
@@ -46,8 +62,9 @@ function set_stage() {
 #
 function leave_stage () {
   echo "Marking as done"
-  mkdir -p $TOTIENT_PKG/stamp
-  date > $TOTIENT_PKG/stamp/$0-stamp
+  # mkdir -p $TOTIENT_PKG/stamp
+  # date > $TOTIENT_PKG/stamp/$0-stamp
+  stamp add
   echo "Leaving staging area"
   popd
   return 0
