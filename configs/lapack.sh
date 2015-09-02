@@ -10,7 +10,7 @@ set_stage_dl http://www.netlib.org/lapack/lapack-3.5.0.tgz
 mkdir build_shared
 cd build_shared
 cmake \
-  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME-gcc-5.2.0 \
+  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME-gcc-4.9.2 \
   -D LAPACKE=ON \
   ..
 make
@@ -21,7 +21,7 @@ cd ..
 mkdir build_static
 cd build_static
 cmake \
-  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME-gcc-5.2.0 \
+  -D CMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME-gcc-4.9.2 \
   -D BUILD_SHARED_LIBS=ON \
   -D LAPACKE=ON \
   ..
