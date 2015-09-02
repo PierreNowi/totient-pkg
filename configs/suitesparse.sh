@@ -3,14 +3,15 @@
 # SuiteSparse
 # http://faculty.cse.tamu.edu/davis/suitesparse.html
 
-module load openblas
-module load lapack
+BUILD_TAG=4.4.5-gcc-4.9.2
+module load openblas/gcc-4.9.2
+module load lapack/3.5.0-gcc-4.9.2
 
 source ./helper.sh
 set_stage_dl http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.5.tar.gz
 
 CC=gcc
-INSTALL=$PREFIX/SuiteSparse-4.4.5-gcc-4.9.2
+INSTALL=$PREFIX/SuiteSparse-$BUILD_TAG
 cat >> SuiteSparse_config/SuiteSparse_config.mk <<EOF
 # ============ Added variables =====================
 INSTALL_LIB = $INSTALL/lib

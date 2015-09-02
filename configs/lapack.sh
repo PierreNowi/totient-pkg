@@ -3,6 +3,7 @@
 # LAPACK -- LAPACK library
 # http://www.netlib.org/lapack/
 
+BUILD_TAG=3.5.0-gcc-4.9.2
 source ./helper.sh
 set_stage_dl http://www.netlib.org/lapack/lapack-3.5.0.tgz
 

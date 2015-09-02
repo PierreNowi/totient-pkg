@@ -2,6 +2,7 @@
 #
 # OpenMPI 1.10
 
+BUILD_TAG=1.10.0-gcc-4.9.2
 source ./helper.sh
 
 stage_dl_ac \

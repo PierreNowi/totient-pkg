@@ -3,7 +3,8 @@
 # OpenBLAS -- Successor to GotoBLAS
 # http://xianyi.github.io/OpenBLAS/
 
-DIRNAME=OpenBLAS-gcc-4.9.2
+BUILD_TAG=gcc-4.9.2
+DIRNAME=OpenBLAS-$BUILD_TAG
 URL=git://github.com/xianyi/OpenBLAS
 
 source ./helper.sh
