@@ -9,8 +9,8 @@ wgetl http://www.ezix.org/software/files/lshw-B.02.17.tar.gz
 tar -xzf lshw-B.02.17.tar.gz
 cd lshw-B.02.17
 
-mkdir -p $PREFIX/lshw
-make PREFIX=$PREFIX/lshw
-make install PREFIX=$PREFIX/lshw
+mkdir -p $PREFIX/utils
+make PREFIX=$PREFIX/utils
+make install PREFIX=$PREFIX/utils
 
 leave_stage

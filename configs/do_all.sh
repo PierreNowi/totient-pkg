@@ -48,6 +48,7 @@ module purge
 ./libdwarf.sh
 ./papi.sh
 ./hwloc.sh
+./lshw.sh
 
 # General support modules (GCC and ICC versions)
 for tc in gcc-4.9.2 icc-15.0.3 ; do
