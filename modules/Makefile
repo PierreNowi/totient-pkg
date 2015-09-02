@@ -1,4 +1,4 @@
-MDIRS=devtoolset python psxe gcc openmpi openblas lapack boost suitesparse
+MDIRS=devtoolset python psxe gcc 
 MODULES= \
 	cs5220 \
 	utils \
@@ -19,13 +19,15 @@ install: build
 	done
 
 build:
-	./build.sh openmpi gcc-4.9.2  1.10.0
-	./build.sh openmpi icc-15.0.3 1.10.0
-	./build.sh openblas gcc-4.9.2
-	./build.sh openblas icc-15.0.3
-	./build.sh lapack gcc-4.9.2  3.5.0
-	./build.sh lapack icc-15.0.3 3.5.0
-	./build.sh boost gcc-4.9.2  3.5.0
-	./build.sh boost icc-15.0.3 3.5.0
-	./build.sh suitesparse gcc-4.9.2  4.4.5
-	./build.sh suitesparse icc-15.0.3 4.4.5
+	for tc in gcc-4.9.2 icc-15.0.3 ; do \
+	./build.sh openmpi $$tc 1.10.0 ; \
+	./build.sh openblas $$tc ; \
+	./build.sh lapack $$tc 3.5.0 ; \
+	./build.sh boost $$tc 1.59.0 ; \
+	./build.sh suitesparse $$tc 4.4.5 ; \
+	./build.sh metis $$tc 5.1.0 ; \
+	./build.sh fftw $$tc 3.3.4 ; \
+	./build.sh eigen $$tc 3.2.5 ; \
+	./build.sh armadillo $$tc 5.200.2 ; \
+	./build.sh gsl $$tc 1.16 ; \
+	done
