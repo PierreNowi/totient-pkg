@@ -10,11 +10,12 @@ folder, or clone a repository.  They configure and build out of a
 staging directory, and install into the shared subdirectory.  The
 basic structure is:
 
+* `toolchain`: base configuration scripts for GCC/Intel toolchains
 * `configs`: configuration scripts for building the packages
-* `modules`: module definitions (being replaced by modules repo)
+* `modules`: module definitions and generators
 
-In addition, there are two auxiliary scratch directories:
+In addition, there are:
 
-* `stamp`: time stamps used to track which packages are built
-* `archives`: saved tarballs (avoid re-downloading)
+* `stamp.yml`: time stamps used to track which packages are built
+* `archives`: directory of saved tarballs (avoid re-downloading)
 
