@@ -50,6 +50,12 @@ module purge
 ./hwloc.sh
 ./lshw.sh
 
+# HDF5 and NetCDF libraries
+./szip.sh
+./hdf5.sh
+./netcdf.sh
+./matio.sh
+
 # General support modules (GCC and ICC versions)
 for tc in gcc-4.9.2 icc-15.0.3 ; do
 
@@ -67,13 +73,7 @@ for tc in gcc-4.9.2 icc-15.0.3 ; do
   ./eigen.sh       $tc
   ./armadillo.sh   $tc
   ./gsl.sh         $tc
-  ./glm.sh         $tc
-
-  # HDF5 and NetCDF libraries
-  ./szip.sh     $tc
-  ./hdf5.sh     $tc
-  ./netcdf.sh   $tc
-  ./matio.sh    $tc
+  #./glm.sh         $tc
 
 done
 

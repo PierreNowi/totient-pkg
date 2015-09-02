@@ -31,7 +31,7 @@ build:
 	./build.sh armadillo $$tc 5.200.2 ; \
 	./build.sh gsl $$tc 1.16 ; \
 	./build.sh glm $$tc 0.9.6.3 ; \
-	./build.sh hdf5 $$tc 1.8.13 ; \
-	./build.sh netcdf $$tc 4.3.3.1 ; \
-	./build.sh matio $$tc 1.5.2 ; \
 	done
+	./build.sh hdf5   generic 1.8.13 
+	./build.sh netcdf generic 4.3.3.1 
+	./build.sh matio  generic 1.5.2 

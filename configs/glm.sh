@@ -1,7 +1,6 @@
 #!/bin/sh
 #
-# OpenGL Math (GLM)
-# http://sourceforge.net/projects/ogl-math/
+# OpenGL Math (GLM): https://github.com/g-truc/glm
 
 SF=http://downloads.sourceforge.net/project
 GLM=glm-0.9.6.3
