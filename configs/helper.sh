@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PYTHON=/share/apps/python/anaconda/bin/python
+
 # Exit on first error
 set -e
 
@@ -36,8 +38,9 @@ echo "# ======================="
 # Add, remove, or test a stamp
 #
 function stamp() {
-    python $TOTIENT_PKG/config/check_stamp.py $TOTIENT_PKG/stamp.yml $1 \
-	`echo $0 | sed -e 's/.sh$//'-$BUILD_TAG
+    stamp=`echo $0 | sed -e 's/.sh$//' | sed -e 's/.*[/]//'`-$BUILD_TAG
+    echo $1 $stamp
+    $PYTHON $TOTIENT_PKG/configs/check_stamp.py $TOTIENT_PKG/stamp.yml $1 $stamp
 }
 
 #

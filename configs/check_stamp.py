@@ -24,9 +24,10 @@ def main(dbfile, action, stamp):
             del data[stamp]
     elif action == 'test':
         if stamp in data:
-            print(data[stamp])
+            print("{0}: {1}".format(stamp, data[stamp]))
             sys.exit(0)
         else:
+            print("{0}: no stamp".format(stamp))
             sys.exit(1)
     with open(dbfile, 'w') as f:
         f.write(yaml.dump(data, default_flow_style=False))
