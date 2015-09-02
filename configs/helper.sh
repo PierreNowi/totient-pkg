@@ -49,8 +49,6 @@ function stamp() {
 function set_stage() {
   #if [ -f $TOTIENT_PKG/stamp/$0-stamp ] ; then
   if stamp test ; then
-    echo "Already built $0.  Kill timestamp to force rebuild"
-    cat $TOTIENT_PKG/stamp/$0-stamp
     exit 0
   fi
   echo "Clearing staging area"
@@ -65,8 +63,6 @@ function set_stage() {
 #
 function leave_stage () {
   echo "Marking as done"
-  # mkdir -p $TOTIENT_PKG/stamp
-  # date > $TOTIENT_PKG/stamp/$0-stamp
   stamp add
   echo "Leaving staging area"
   popd
