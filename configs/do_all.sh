@@ -43,6 +43,12 @@ module purge
 ./x264.sh
 ./ffmpeg.sh
 
+# Profiler support
+./libelf.sh
+./libdwarf.sh
+./papi.sh
+./hwloc.sh
+
 # General support modules (GCC and ICC versions)
 for tc in gcc-4.9.2 icc-15.0.3 ; do
 
@@ -71,19 +77,6 @@ for tc in gcc-4.9.2 icc-15.0.3 ; do
 done
 
 exit 0
-
-# -- GLM (used by Trilionos)
-./glm.sh
-
-# -- Profilers and the like
-./libdwarf.sh
-# ./dyninst.sh
-./papi.sh
-./hwloc.sh
-
-# -- PDT and TAU (module)
-# ./pdt.sh
-# ./tau.sh
 
 # -- gperftools (module)
 ./gperftools.sh
