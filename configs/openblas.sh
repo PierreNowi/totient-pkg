@@ -3,7 +3,12 @@
 # OpenBLAS -- Successor to GotoBLAS
 # http://xianyi.github.io/OpenBLAS/
 
-BUILD_TAG=gcc-4.9.2
+if [ "$#" -ne 1 ]; then
+  echo "Must include tag" >&2
+  exit 1
+fi
+
+BUILD_TAG=$1
 DIRNAME=OpenBLAS-$BUILD_TAG
 URL=git://github.com/xianyi/OpenBLAS
 

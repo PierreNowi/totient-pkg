@@ -3,9 +3,14 @@
 # Boost C++ libraries
 # http://www.boost.org/
 
+if [ "$#" -ne 1 ]; then
+  echo "Requires compiler tag" >&2
+  exit 1
+fi
+
+BUILD_TAG=1.59.0-$1
 source ./helper.sh
 module load anaconda
-BUILD_TAG=1.59.0-gcc-4.9.2
 
 set_stage_dl http://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.bz2
 

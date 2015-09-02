@@ -13,12 +13,10 @@ module purge
 ./binutils.sh
 
 # -- GCC 5.2.0 + wrappers
-#./gcc5.sh
-#./gcc5_wrapper.sh
+./gcc5.sh
+./gcc5_wrapper.sh
 
 # -- Let's build everything else with the new GCC
-#module load gcc/5.2.0
-#module load utils
 module load devtoolset
 module load utils
 
@@ -34,10 +32,6 @@ module load utils
 # -- CMake
 ./cmake.sh 
 
-# -- GraphViz, Doxygen, and curl with SSL for CMake (and others)
-#./graphviz.sh
-#./doxygen.sh
-
 # -- Most recent autoconf/automake/libtool
 ./patchelf.sh
 ./makedepend.sh
@@ -45,36 +39,31 @@ module load utils
 ./autoconf.sh
 ./automake.sh
 
-# -- Build valgrind
-#./valgrind.sh
-
 # -- For building current CLang
 ./libedit.sh
 
 # -- libunwind (useful for mpiP)
 ./libunwind.sh
 
-# -- OpenMPI 1.10.0 (module)
-./openmpi.sh
+# -- General support modules
+./openmpi.sh gcc-4.9.2
+./openblas.sh gcc-4.9.2
+./lapack.sh gcc-4.9.2
+./boost.sh gcc-4.9.2
 
-# -- OpenBLAS (module)
-./openblas.sh
+module load psxe
+./openmpi.sh icc-15.0.3
+./openblas.sh icc-15.0.3
+./lapack.sh icc-15.0.3
+./boost.sh icc-15.0.3
 
-# -- LAPACK (module)
-./lapack.sh
-
-# -- SPRNG (module)
-# ./sprng.sh
-
-# -- Boost
-./boost.sh
+exit 0
 
 # -- Standard numerical libraries
 ./fftw.sh
 ./arpack-ng.sh
 ./metis.sh
 ./suitesparse.sh
-exit 0
 ./eigen.sh
 ./armadillo.sh
 ./gsl.sh
