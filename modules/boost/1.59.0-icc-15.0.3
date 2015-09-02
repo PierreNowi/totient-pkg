@@ -1,0 +1,17 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "Boost 1.59.0 (Intel 15.0.3 build)"
+}
+ 
+module-whatis "Boost 1.59.0 (Intel 15.0.3 build)"
+set basedir /share/apps/boost-1.59.0-gcc-4.9.2
+
+prepend-path PATH $basedir/bin
+prepend-path PATH $basedir/wrapper
+prepend-path CPATH $basedir/include
+prepend-path LD_RUN_PATH $basedir/lib
+prepend-path LD_RUN_PATH $basedir/lib64
+prepend-path LIBRARY_PATH $basedir/lib
+prepend-path LIBRARY_PATH $basedir/lib64
+prepend-path MANPATH $basedir/man

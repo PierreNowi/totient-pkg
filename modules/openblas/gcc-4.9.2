@@ -1,0 +1,12 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "OpenBLAS (GCC 4.9.2 RH)"
+}
+ 
+module-whatis "OpenBLAS (GCC 4.9.2 RH)"
+set basedir /share/apps/OpenBLAS-gcc-4.9.2
+
+prepend-path CPATH $basedir/include
+prepend-path LIBRARY_PATH $basedir/lib
+prepend-path LD_RUN_PATH $basedir/lib

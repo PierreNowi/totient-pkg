@@ -1,0 +1,12 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "OpenBLAS (Intel 15.0.3)"
+}
+ 
+module-whatis "OpenBLAS (Intel 15.0.3)"
+set basedir /share/apps/OpenBLAS-icc-15.0.3
+
+prepend-path CPATH $basedir/include
+prepend-path LIBRARY_PATH $basedir/lib
+prepend-path LD_RUN_PATH $basedir/lib

@@ -1,0 +1,48 @@
+#%Module1.0
+#
+# The devtoolset-3 package is part of the RedHat Software Collections
+# and includes more recent versions of various development tools
+# (gcc, valgrind, dyninst, etc).  It is normally enabled by running
+# something like
+#
+#    scl enable foo
+#
+# where foo is some desired command.  This module is created 
+# semi-automatically by running
+#
+#    scl enable env
+#
+# and then tacking a diff against the previous environment.
+
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "devtoolset-3 package"
+}
+
+module-whatis "devtoolset-3 package"
+
+set base /opt/rh/devtoolset-3/root
+set java /opt/rh/rh-java-common/root
+
+prepend-path MANPATH $java/usr/share/man
+prepend-path MANPATH $base/usr/share/man
+prepend-path PERL5LIB $base/usr/lib64/perl5/vendor_perl
+prepend-path PERL5LIB $base/usr/lib/perl5
+prepend-path PERL5LIB $base/usr/share/perl5/vendor_perl
+prepend-path JAVACONFDIRS $java/etc/java
+prepend-path JAVACONFDIRS $base/etc/java
+setenv X_SCLS "rh-java-common devtoolset-3"
+setenv PCP_DIR $base
+prepend-path LD_LIBRARY_PATH $base/usr/lib
+prepend-path LD_LIBRARY_PATH $base/usr/lib64
+prepend-path XDG_CONFIG_DIRS $java/etc/xdg
+prepend-path XDG_CONFIG_DIRS $base/etc/xdg
+prepend-path PATH $java/usr/bin
+prepend-path PATH $base/usr/bin:
+prepend-path PYTHONPATH $java/usr/lib/python2.6/site-packages
+prepend-path PYTHONPATH $base/usr/lib/python2.6/site-packages
+prepend-path PYTHONPATH $base/usr/lib64/python2.6/site-packages
+prepend-path XDG_DATA_DIRS $java/usr/share
+prepend-path XDG_DATA_DIRS $base/usr/share
+prepend-path INFOPATH $base/usr/share/info
+

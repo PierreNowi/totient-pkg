@@ -1,0 +1,22 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "GCC 5.2.0"
+}
+ 
+module-whatis "GCC 5.2.0"
+set basedir /share/apps/gcc-5.2.0
+
+prepend-path PATH $basedir/bin
+prepend-path PATH $basedir/wrapper
+prepend-path CPATH $basedir/include
+prepend-path LD_RUN_PATH $basedir/lib
+prepend-path LD_RUN_PATH $basedir/lib64
+prepend-path LIBRARY_PATH $basedir/lib
+prepend-path LIBRARY_PATH $basedir/lib64
+prepend-path MANPATH $basedir/man
+
+setenv CC gcc
+setenv CPP cpp
+setenv CXX g++
+setenv FC gfortran

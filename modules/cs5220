@@ -1,0 +1,12 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "Default modules for CS 5220"
+}
+ 
+module-whatis "Default modules for CS 5220"
+
+module load utils
+module load devtoolset
+module load psxe/2015
+module load anaconda

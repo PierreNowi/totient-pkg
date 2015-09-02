@@ -1,0 +1,14 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "Python 2.7"
+}
+ 
+module-whatis "Python 2.7"
+conflict python/3.4 anaconda
+set basedir /share/apps/python/python2.7
+
+prepend-path PATH $basedir/bin
+prepend-path CPATH $basedir/include
+prepend-path LIBRARY_PATH $basedir/lib
+prepend-path LD_RUN_PATH $basedir/lib
