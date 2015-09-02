@@ -42,16 +42,16 @@ cd llvm
 mkdir build
 cd build
 
-../configure -prefix=$PREFIX/llvm-$VER-gcc-5.2.0 \
-  --with-gcc-toolchain=$PREFIX/gcc-5.2.0 \
-  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-5.2.0/lib64 \
+../configure -prefix=$PREFIX/llvm-$VER-gcc-4.9.2 \
+  --with-gcc-toolchain=$PREFIX/gcc-4.9.2 \
+  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-4.9.2/lib64 \
   --enable-cxx11
 
 make
 make install
 
-mkdir -p $PREFIX/llvm-$VER-analyzer-gcc-5.2.0/
-cp -R ../tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer-gcc-5.2.0/
-cp -R ../tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer-gcc-5.2.0/
+mkdir -p $PREFIX/llvm-$VER-analyzer-gcc-4.9.2/
+cp -R ../tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer-gcc-4.9.2/
+cp -R ../tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer-gcc-4.9.2/
 
 leave_stage

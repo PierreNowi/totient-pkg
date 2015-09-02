@@ -7,9 +7,10 @@ module load openblas
 module load lapack
 
 source ./helper.sh
-set_stage_dl http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.4.tar.gz
+set_stage_dl http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.5.tar.gz
 
-INSTALL=$PREFIX/SuiteSparse
+CC=gcc
+INSTALL=$PREFIX/SuiteSparse-4.4.5-gcc-4.9.2
 cat >> SuiteSparse_config/SuiteSparse_config.mk <<EOF
 # ============ Added variables =====================
 INSTALL_LIB = $INSTALL/lib

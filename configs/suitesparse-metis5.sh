@@ -3,8 +3,8 @@
 # SuiteSparse
 # http://faculty.cse.tamu.edu/davis/suitesparse.html
 
-module load openblas
-module load lapack
+module load openblas/gcc-4.9.2
+module load lapack/3.5.0-gcc-4.9.2
 
 source ./helper.sh
 set_stage_dl http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.4.tar.gz
