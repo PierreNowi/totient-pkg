@@ -38,9 +38,9 @@ echo "# ======================="
 # Add, remove, or test a stamp
 #
 function stamp() {
-    stamp=`echo $0 | sed -e 's/.sh$//' | sed -e 's/.*[/]//'`-$BUILD_TAG
-    echo $1 $stamp
-    $PYTHON $TOTIENT_PKG/configs/check_stamp.py $TOTIENT_PKG/stamp.yml $1 $stamp
+  stamp=`echo $0 | sed -e 's/.sh$//' | sed -e 's/.*[/]//'`-$BUILD_TAG
+  echo $1 $stamp
+  $PYTHON $TOTIENT_PKG/configs/check_stamp.py $TOTIENT_PKG/stamp.yml $1 $stamp
 }
 
 #

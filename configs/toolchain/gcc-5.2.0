@@ -1,0 +1,3 @@
+module purge
+module load utils
+module load gcc/5.2.0

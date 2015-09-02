@@ -52,6 +52,10 @@ module load utils
 ./boost.sh gcc-4.9.2
 
 module load psxe
+export CC=icc
+export CXX=icpc
+export FC=ifort
+
 ./openmpi.sh icc-15.0.3
 ./openblas.sh icc-15.0.3
 ./lapack.sh icc-15.0.3
