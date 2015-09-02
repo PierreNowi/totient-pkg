@@ -5,3 +5,4 @@ module load utils
 export CC=gcc
 export CXX=g++
 export FC=gfortran
+export FLIBS=-lgfortran
