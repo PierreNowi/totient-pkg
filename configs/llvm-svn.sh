@@ -4,7 +4,7 @@
 
 URL=http://llvm.org/svn/llvm-project/
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 module load cs5220
 

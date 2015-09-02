@@ -5,61 +5,60 @@
 set -e
 exec > >(tee -a build.log) 2>&1
 
-# -- Most everything goes into the base package -- set up appropriate path
-#    Otherwise we want the base system
+# Load nothing by default
 module purge
 
-# -- Up-to-date binutils
+# GCC 5
 ./binutils.sh
-
-# -- GCC 5.2.0 + wrappers
 ./gcc5.sh
 ./gcc5_wrapper.sh
 
-# -- Let's build everything else with the new GCC
-module load devtoolset
-module load utils
-
-# -- zlib and bzip2
+# Archiver libraries
 ./zlib.sh
 ./bzip2.sh
 
-# -- Updated git
+# Git and dependencies
 ./curl.sh
 ./expat.sh
 ./git.sh
 
-# -- CMake
-./cmake.sh 
+# CMake
+./cmake.sh
 
-# -- Most recent autoconf/automake/libtool
+# Autotools and associated utils
 ./patchelf.sh
 ./makedepend.sh
 ./libtool.sh
 ./autoconf.sh
 ./automake.sh
 
-# -- For building current CLang
+# For building current CLang
 ./libedit.sh
 
-# -- libunwind (useful for mpiP)
+# libunwind (useful for mpiP)
 ./libunwind.sh
 
-# -- General support modules
-./openmpi.sh gcc-4.9.2
-./openblas.sh gcc-4.9.2
-./lapack.sh gcc-4.9.2
-./boost.sh gcc-4.9.2
+# FFMPEG and prereqs (enough for coding vids)
+./yasm.sh
+./x264.sh
+./ffmpeg.sh
 
-module load psxe
-export CC=icc
-export CXX=icpc
-export FC=ifort
+# General support modules (GCC and ICC versions)
+for tc in gcc-4.9.2 icc-15.0.3 ; do
 
-./openmpi.sh icc-15.0.3
-./openblas.sh icc-15.0.3
-./lapack.sh icc-15.0.3
-./boost.sh icc-15.0.3
+  ./boost.sh       $tc
+  ./openmpi.sh     $tc
+  ./openblas.sh    $tc
+  ./lapack.sh      $tc
+  ./metis.sh       $tc
+  ./suitesparse.sh $tc
+  ./fftw.sh        $tc
+  ./arpack-ng.sh   $tc
+  ./eigen.sh       $tc
+  ./armadillo.sh   $tc
+  ./gsl.sh         $tc
+
+done
 
 exit 0
 
@@ -87,11 +86,6 @@ exit 0
 ./papi.sh
 ./hwloc.sh
 
-# -- FFMPEG (enough for coding vids)
-./yasm.sh
-./x264.sh
-./ffmpeg.sh
-
 # -- PDT and TAU (module)
 # ./pdt.sh
 # ./tau.sh
@@ -105,7 +99,6 @@ exit 0
 
 # -- For building LLVM and CLang (module)
 ./llvm.sh
-exit 0
 ./ispc.sh
 
 # -- Build Julia (module)

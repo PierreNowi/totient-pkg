@@ -3,16 +3,11 @@
 # OpenBLAS -- Successor to GotoBLAS
 # http://xianyi.github.io/OpenBLAS/
 
-if [ "$#" -ne 1 ]; then
-  echo "Must include tag" >&2
-  exit 1
-fi
+source ./helper.sh $*
 
-BUILD_TAG=$1
 DIRNAME=OpenBLAS-$BUILD_TAG
 URL=git://github.com/xianyi/OpenBLAS
 
-source ./helper.sh
 set_stage
 git clone $URL
 cd OpenBLAS

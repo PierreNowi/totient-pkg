@@ -2,7 +2,7 @@
 #
 # VisIt visualization tool (binary)
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 
 module load anaconda

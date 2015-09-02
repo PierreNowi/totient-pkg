@@ -3,7 +3,7 @@
 # Set up wrappers around gcc/g++/gfortran
 
 VER=5.2.0
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 
 mkdir -p $PREFIX/gcc-$VER/wrapper

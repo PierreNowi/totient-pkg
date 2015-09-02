@@ -3,7 +3,7 @@
 # LibDwarf
 # http://www.prevanders.net/dwarf.html
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage_dl http://prevanders.net/libdwarf-20150507.tar.gz
 
 # Note: build is known to fail when running tag_tree_build; lib still works

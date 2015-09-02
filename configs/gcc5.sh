@@ -6,7 +6,7 @@
 #     on the head node.  I used en-totient-02 for the build.
 
 VER=gcc-5.2.0
-source ./helper.sh
+source ./helper.sh $*
 
 # -- Set up paths
 export LIBRARY_PATH=$PREFIX/$VER/lib:$PREFIX/$VER/lib64

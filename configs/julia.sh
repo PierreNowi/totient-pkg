@@ -2,7 +2,7 @@
 #
 # Julia
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 set_stage_dl https://github.com/JuliaLang/julia.git
 

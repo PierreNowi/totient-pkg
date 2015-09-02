@@ -7,5 +7,5 @@ module load openblas
 module load lapack
 module load openmpi-1.8.6
 
-source ./helper.sh
+source ./helper.sh $*
 stage_dl_cmake sundials-2.6.1.tar.gz -DCMAKE_INSTALL_PREFIX=$PREFIX/$DIRNAME

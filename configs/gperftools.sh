@@ -19,7 +19,7 @@ DIRNAME=gperftools-2.4
 TARBALL=$DIRNAME.tar.gz
 URL=https://googledrive.com/host/0B6NtGsLhIcf7MWxMMF9JdTN3UVk/$TARBALL
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 
 wgetl $UURL

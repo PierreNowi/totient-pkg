@@ -17,7 +17,7 @@ function wget_llvm () {
   mv $1-$VER.src $2
 }
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 module load anaconda
 export LD_LIBRARY_PATH=$HOME/local/anaconda/lib:$LD_LIBRARY_PATH

@@ -2,7 +2,7 @@
 #
 # hwloc
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 
 wgetl http://www.ezix.org/software/files/lshw-B.02.17.tar.gz

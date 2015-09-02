@@ -2,7 +2,7 @@
 #
 # Ldoc -- my little literate documentation tool
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 
 git clone https://bitbucket.org/dbindel/nanobush

@@ -9,7 +9,7 @@ DIRNAME=sprng4.4
 TARBALL=$DIRNAME.bz2
 URL=http://www.sprng.org/Version4.0/sprng4.4.bz2
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage
 wgetl $URL
 tar -xjf $TARBALL

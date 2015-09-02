@@ -9,7 +9,7 @@ module load lapack
 module load suitesparse
 module load openmpi-1.8.6
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage_dl http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.6.0.tar.gz
 
 ./configure \

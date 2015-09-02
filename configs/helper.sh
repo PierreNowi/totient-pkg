@@ -5,6 +5,16 @@ PYTHON=/share/apps/python/anaconda/bin/python
 # Exit on first error
 set -e
 
+# Check args
+TOOLCHAIN=generic
+if [ "$#" -gt 1 ]; then
+  TOOLCHAIN=$1
+  if [ -z toolchain/$TOOLCHAIN ]; then
+    echo "Invalid toolchain: $TOOLCHAIN"
+    exit 1
+  fi
+fi
+
 # Install under /share/apps
 if [ -z "$PREFIX" ]; then
   PREFIX=/share/apps
@@ -22,7 +32,7 @@ fi
 
 # Build tag
 if [ -z "$BUILD_TAG" ]; then
-  BUILD_TAG="generic"
+  BUILD_TAG=$TOOLCHAIN
 fi
 
 # Report variable setup
@@ -30,9 +40,11 @@ echo "# ======================="
 echo "PREFIX= $PREFIX"
 echo "STAGING=$STAGING"
 echo "TOTIENT_PKG=$TOTIENT_PKG"
-echo "BUILD_TAG=$BUILD_TAG"
+echo "TOOLCHAIN=$TOOLCHAIN"
 echo "# ======================="
 
+# Load toolchain modules
+source toolchain/$TOOLCHAIN
 
 #
 # Add, remove, or test a stamp

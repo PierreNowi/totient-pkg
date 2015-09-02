@@ -31,7 +31,7 @@ module load lapack
 module load suitesparse
 module load openmpi-1.8.6
 
-source ./helper.sh
+source ./helper.sh $*
 set_stage_dl http://trilinos.csbsju.edu/download/files/trilinos-12.0.1-Source.tar.bz2
 
 # Build shared libraries
