@@ -5,16 +5,6 @@ PYTHON=/share/apps/python/anaconda/bin/python
 # Exit on first error
 set -e
 
-# Check args
-TOOLCHAIN=generic
-if [ "$#" -gt 1 ]; then
-  TOOLCHAIN=$1
-  if [ -z toolchain/$TOOLCHAIN ]; then
-    echo "Invalid toolchain: $TOOLCHAIN"
-    exit 1
-  fi
-fi
-
 # Install under /share/apps
 if [ -z "$PREFIX" ]; then
   PREFIX=/share/apps
@@ -28,6 +18,16 @@ fi
 # totient-pkg location
 if [ -z "$TOTIENT_PKG" ]; then
   TOTIENT_PKG=`pwd`/../
+fi
+
+# Toolchain
+TOOLCHAIN=generic
+if [ "$#" -ge 1 ]; then
+  TOOLCHAIN=$1
+  if [ -z $TOTIENT_PKG/toolchain/$TOOLCHAIN ]; then
+    echo "Invalid toolchain: $TOOLCHAIN"
+    exit 1
+  fi
 fi
 
 # Build tag
@@ -44,7 +44,7 @@ echo "TOOLCHAIN=$TOOLCHAIN"
 echo "# ======================="
 
 # Load toolchain modules
-source toolchain/$TOOLCHAIN
+source $TOTIENT_PKG/toolchain/$TOOLCHAIN
 
 #
 # Add, remove, or test a stamp

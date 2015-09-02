@@ -17,7 +17,7 @@ mkdir build
 cd build
 cmake \
   -D CMAKE_PREFIX_PATH=$PREFIX/armadillo-$BUILD_TAG \
-  -D CMAKE_INSTALL_PREFIX=$PREFIX/armadillo-BUILD_TAG \
+  -D CMAKE_INSTALL_PREFIX=$PREFIX/armadillo-$BUILD_TAG \
   ..
 make
 make install

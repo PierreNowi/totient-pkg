@@ -11,14 +11,13 @@ BUILD_TAG=4.4.5-$TOOLCHAIN
 
 set_stage_dl http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.4.5.tar.gz
 
-CC=gcc
 INSTALL=$PREFIX/SuiteSparse-$BUILD_TAG
 cat >> SuiteSparse_config/SuiteSparse_config.mk <<EOF
 # ============ Added variables =====================
 INSTALL_LIB = $INSTALL/lib
 INSTALL_INCLUDE = $INSTALL/include
 BLAS = -L$PREFIX/OpenBLAS-$TOOLCHAIN/lib -lopenblas
-LAPACK = -L$PREFIX/lapack-3.5.0-$TOOLCHAIN/lib/ -llapack
+LAPACK = -L$PREFIX/lapack-3.5.0-$TOOLCHAIN/lib/ -llapack -lifcore
 # ============ Added variables =====================
 EOF
 
