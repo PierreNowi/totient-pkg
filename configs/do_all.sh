@@ -1,5 +1,9 @@
-#!/bin/sh
+#!/bin/bash
+
+# Halt on errors and send output to build.log as well as screen
+# Ref: http://bit.ly/1PKWIsw
 set -e
+exec > >(tee -a build.log) 2>&1
 
 # -- Most everything goes into the base package -- set up appropriate path
 #    Otherwise we want the base system
@@ -9,12 +13,18 @@ module purge
 ./binutils.sh
 
 # -- GCC 5.2.0 + wrappers
-./gcc.sh
-./gcc_wrapper.sh
+#./gcc5.sh
+#./gcc5_wrapper.sh
 
 # -- Let's build everything else with the new GCC
-module load gcc/5.2.0
+#module load gcc/5.2.0
+#module load utils
+module load devtoolset
 module load utils
+
+# -- zlib and bzip2
+./zlib.sh
+./bzip2.sh
 
 # -- Updated git
 ./curl.sh
@@ -59,13 +69,12 @@ module load utils
 # -- Boost
 ./boost.sh
 
-exit 0
-
 # -- Standard numerical libraries
 ./fftw.sh
 ./arpack-ng.sh
 ./metis.sh
 ./suitesparse.sh
+exit 0
 ./eigen.sh
 ./armadillo.sh
 ./gsl.sh
@@ -98,11 +107,12 @@ exit 0
 ./gperftools.sh
 
 # -- IPM (module)
-./ploticus.sh
+# ./ploticus.sh
 # ./ipm.sh
 
 # -- For building LLVM and CLang (module)
 ./llvm.sh
+exit 0
 ./ispc.sh
 
 # -- Build Julia (module)
