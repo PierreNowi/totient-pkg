@@ -18,8 +18,9 @@ function wget_llvm () {
 }
 
 source ./helper.sh $*
-set_stage
 module load anaconda
+
+set_stage
 export LD_LIBRARY_PATH=$HOME/local/anaconda/lib:$LD_LIBRARY_PATH
 
 wget_llvm llvm llvm
@@ -39,19 +40,18 @@ wget_llvm compiler-rt compiler-rt
 popd
 
 cd llvm
+patch -p1 < $TOTIENT_PKG/patches/llvm-$VER.patch
+
 mkdir build
 cd build
 
-../configure -prefix=$PREFIX/llvm-$VER-gcc-4.9.2 \
-  --with-gcc-toolchain=$PREFIX/gcc-4.9.2 \
-  --with-extra-ld-options=-Wl,-R$PREFIX/gcc-4.9.2/lib64 \
-  --enable-cxx11
+../configure -prefix=$PREFIX/llvm-$VER --enable-cxx11
 
 make
 make install
 
-mkdir -p $PREFIX/llvm-$VER-analyzer-gcc-4.9.2/
-cp -R ../tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer-gcc-4.9.2/
-cp -R ../tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer-gcc-4.9.2/
+mkdir -p $PREFIX/llvm-$VER-analyzer/
+cp -R ../tools/clang/tools/scan-build/* $PREFIX/llvm-$VER-analyzer/
+cp -R ../tools/clang/tools/scan-view/*  $PREFIX/llvm-$VER-analyzer/
 
 leave_stage

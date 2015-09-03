@@ -35,6 +35,10 @@ module purge
 # For building current CLang
 ./libedit.sh
 
+# For building LLVM and CLang (module)
+./llvm.sh
+./ispc.sh
+
 # libunwind (useful for mpiP)
 ./libunwind.sh
 
@@ -86,9 +90,6 @@ exit 0
 # ./ploticus.sh
 # ./ipm.sh
 
-# -- For building LLVM and CLang (module)
-./llvm.sh
-./ispc.sh
 
 # -- Build Julia (module)
 ./julia.sh
