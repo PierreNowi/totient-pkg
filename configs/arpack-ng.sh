@@ -5,7 +5,7 @@
 
 source ./helper.sh $*
 
-module load openblas/$TOOLCHAIN
+module load openblas
 module load lapack/3.5.0-$TOOLCHAIN
 BUILD_TAG=3.2.0-$TOOLCHAIN
 
