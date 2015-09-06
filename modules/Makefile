@@ -1,4 +1,4 @@
-MDIRS=devtoolset python psxe gcc 
+MDIRS=devtoolset python psxe gcc llvm
 MODULES= \
 	cs5220 \
 	utils \
@@ -7,7 +7,8 @@ MODULES= \
 	python/2.7 \
 	python/3.4.3 \
 	psxe/2015 \
-	gcc/5.2.0 
+	gcc/5.2.0 \
+	llvm/3.6.2
 
 .PHONY: install build
 
