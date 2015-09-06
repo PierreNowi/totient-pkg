@@ -36,8 +36,9 @@ module purge
 ./libedit.sh
 
 # For building LLVM and CLang (module)
+# NB: Need to fix issue with wrong toolchain detection before ISPC will build!
 ./llvm.sh
-./ispc.sh
+#./ispc.sh
 
 # libunwind (useful for mpiP)
 ./libunwind.sh
@@ -47,9 +48,11 @@ module purge
 ./x264.sh
 ./ffmpeg.sh
 
-# Profiler support
+# Local LibELF / LibDwarf (in module)
 ./libelf.sh
 ./libdwarf.sh
+
+# Profiler support
 ./papi.sh
 ./hwloc.sh
 ./lshw.sh
@@ -60,6 +63,9 @@ module purge
 ./netcdf.sh
 ./matio.sh
 
+# Only build OpenBLAS for GCC (ICC has issues with Haswell assembly kernel)
+./openblas.sh gcc-4.9.2
+
 # General support modules (GCC and ICC versions)
 for tc in gcc-4.9.2 icc-15.0.3 ; do
 
@@ -68,7 +74,6 @@ for tc in gcc-4.9.2 icc-15.0.3 ; do
   ./openmpi.sh     $tc
 
   # Misc numerical libraries
-  ./openblas.sh    $tc
   ./lapack.sh      $tc
   ./metis.sh       $tc
   ./suitesparse.sh $tc
