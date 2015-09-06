@@ -1,4 +1,4 @@
-MDIRS=devtoolset python psxe gcc
+MDIRS=devtoolset python psxe gcc 
 MODULES= \
 	cs5220 \
 	utils \

@@ -39,7 +39,7 @@ module purge
 # NB: Need to fix issue with wrong toolchain detection before ISPC will build!
 ./llvm.sh
 ./llvm37.sh
-#./ispc.sh
+./ispc.sh
 
 # libunwind (useful for mpiP)
 ./libunwind.sh

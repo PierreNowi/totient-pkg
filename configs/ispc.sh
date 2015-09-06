@@ -5,11 +5,10 @@
 source ./helper.sh $*
 set_stage
 
-git clone https://github.com/ispc/ispc.git ispc
-cd ispc
-
-module load llvm
-make
+wget http://sourceforge.net/projects/ispcmirror/files/v1.8.2/ispc-v1.8.2knl-linux.tar.gz/download
+tar -xzf download
+module load llvm/3.7.0
+cd ispc-v1.8.2knl-linux
 install -t `llvm-config --bindir` ispc
 
 leave_stage
