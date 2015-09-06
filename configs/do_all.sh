@@ -38,6 +38,7 @@ module purge
 # For building LLVM and CLang (module)
 # NB: Need to fix issue with wrong toolchain detection before ISPC will build!
 ./llvm.sh
+./llvm37.sh
 #./ispc.sh
 
 # libunwind (useful for mpiP)
