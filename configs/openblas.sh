@@ -11,8 +11,8 @@ URL=git://github.com/xianyi/OpenBLAS
 set_stage
 git clone $URL
 cd OpenBLAS
-make
-make install PREFIX=$PREFIX/$DIRNAME
+make TARGET=HASWELL
+make install TARGET=HASWELL PREFIX=$PREFIX/$DIRNAME
 rm -f $PREFIX/$DIRNAME/lib/libblas.a
 rm -f $PREFIX/$DIRNAME/lib/libblas.so
 ln -s $PREFIX/$DIRNAME/lib/libopenblas.a  $PREFIX/$DIRNAME/lib/libblas.a
