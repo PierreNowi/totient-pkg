@@ -27,7 +27,7 @@ wget_llvm llvm llvm
 
 pushd llvm/tools
 wget_llvm cfe clang
-wget_llvm lldb lldb
+#wget_llvm lldb lldb
 popd
 
 pushd llvm/tools/clang/tools
