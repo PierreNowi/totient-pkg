@@ -11,8 +11,8 @@ set_stage_dl http://prevanders.net/libdwarf-20150507.tar.gz
 set +e
 make
 set -e
-cp libdwarf/libdwarf.so $PREFIX/utils/lib
-cp libdwarf/libdwarf.h libdwarf/dwarf.h $PREFIX/utils/include
+cp libdwarf/libdwarf.so $PREFIX/libelf-0.163/lib
+cp libdwarf/libdwarf.h libdwarf/dwarf.h $PREFIX/libelf-0.163/include
 #cp dwarfdump2/dwarfdump $PREFIX/bin
 
 leave_stage 
