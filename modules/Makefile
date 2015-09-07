@@ -1,4 +1,4 @@
-MDIRS=devtoolset python psxe gcc 
+MDIRS=devtoolset python psxe gcc upc
 MODULES= \
 	cs5220 \
 	utils \
@@ -7,7 +7,8 @@ MODULES= \
 	python/2.7 \
 	python/3.4.3 \
 	psxe/2015 \
-	gcc/5.2.0 
+	gcc/5.2.0 \
+	upc/2.20.2
 
 .PHONY: install build
 
@@ -30,7 +31,6 @@ build:
 	./build.sh eigen $$tc 3.2.5 ; \
 	./build.sh armadillo $$tc 5.200.2 ; \
 	./build.sh gsl $$tc 1.16 ; \
-	./build.sh glm $$tc 0.9.6.3 ; \
 	done
 	./build.sh hdf5   generic 1.8.13 
 	./build.sh netcdf generic 4.3.3.1 

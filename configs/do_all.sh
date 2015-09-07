@@ -87,6 +87,8 @@ for tc in gcc-4.9.2 icc-15.0.3 ; do
 
 done
 
+./upc.sh
+
 exit 0
 
 # -- gperftools (module)
