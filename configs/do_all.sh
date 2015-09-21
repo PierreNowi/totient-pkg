@@ -16,6 +16,7 @@ module purge
 # Archiver libraries
 ./zlib.sh
 ./bzip2.sh
+./xz.sh
 
 # Git and dependencies
 ./curl.sh
