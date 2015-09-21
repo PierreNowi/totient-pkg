@@ -33,6 +33,14 @@ module purge
 ./autoconf.sh
 ./automake.sh
 
+# flex and bison
+./flex.sh
+./bison.sh
+
+# Boehm GC
+./libatomic_ops.sh
+./gc.sh
+
 # For building current CLang
 ./libedit.sh
 
@@ -65,6 +73,9 @@ module purge
 ./netcdf.sh
 ./matio.sh
 
+# GNU Database Manager
+./gdbm.sh
+
 # Only build OpenBLAS for GCC (ICC has issues with Haswell assembly kernel)
 ./openblas.sh gcc-4.9.2
 
@@ -88,9 +99,12 @@ for tc in gcc-4.9.2 icc-15.0.3 ; do
 
 done
 
-./upc.sh
+# GNU Linear Programming Kit
+./glpk.sh
 
 exit 0
+
+./upc.sh
 
 # -- gperftools (module)
 ./gperftools.sh

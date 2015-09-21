@@ -14,4 +14,5 @@ prepend-path LD_RUN_PATH $basedir/lib64
 prepend-path LIBRARY_PATH $basedir/lib
 prepend-path LIBRARY_PATH $basedir/lib64
 prepend-path MANPATH $basedir/man
+prepend-path PKG_CONFIG_PATH $basedir/lib/pkgconfig
 

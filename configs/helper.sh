@@ -115,6 +115,12 @@ function set_stage_dl () {
     mkdir tmp
     cd tmp
     tar -xzf ../$TARBALL
+  elif echo $TARBALL | grep -q '[.]xz$' ; then
+    echo "Fetching $TARBALL"
+    wgetl $1
+    mkdir tmp
+    cd tmp
+    tar -xJf ../$TARBALL
   elif echo $TARBALL | grep -q '[.]tgz$' ; then
     echo "Fetching $TARBALL"
     wgetl $1
