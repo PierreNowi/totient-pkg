@@ -80,6 +80,10 @@ module purge
 # Only build OpenBLAS for GCC (ICC has issues with Haswell assembly kernel)
 ./openblas.sh gcc-4.9.2
 
+# -- IPM (module)
+./ploticus.sh
+# ./ipm.sh
+
 # General support modules (GCC and ICC versions)
 for tc in gcc-4.9.2 icc-15.0.3 ; do
 
@@ -98,6 +102,8 @@ for tc in gcc-4.9.2 icc-15.0.3 ; do
   ./gsl.sh         $tc
   #./glm.sh         $tc
 
+  # Profiling systems
+  ./ipm.sh         $tc
 done
 
 # GNU Linear Programming Kit
@@ -109,9 +115,6 @@ done
 # -- gperftools (module)
 ./gperftools.sh
 
-# -- IPM (module)
-./ploticus.sh
-# ./ipm.sh
 
 exit 0
 
