@@ -32,6 +32,7 @@ build:
 	./build.sh eigen $$tc 3.2.5 ; \
 	./build.sh armadillo $$tc 5.200.2 ; \
 	./build.sh gsl $$tc 1.16 ; \
+	./build.sh ipm $$tc ; \
 	done
 	./build.sh hdf5   generic 1.8.13 
 	./build.sh netcdf generic 4.3.3.1 
