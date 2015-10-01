@@ -1,4 +1,4 @@
-MDIRS=devtoolset python psxe gcc upc
+MDIRS=devtoolset python psxe gcc upc iaca
 MODULES= \
 	cs5220 \
 	utils \
@@ -8,7 +8,8 @@ MODULES= \
 	python/3.4.3 \
 	psxe/2015 \
 	gcc/5.2.0 \
-	upc/2.20.2
+	upc/2.20.2 \
+	iaca/2.1
 
 .PHONY: install build
 
@@ -37,3 +38,4 @@ build:
 	./build.sh matio  generic 1.5.2 
 	./build.sh llvm   generic 3.6.2
 	./build.sh llvm   generic 3.7.0
+	./build.sh gperftools generic 2.4

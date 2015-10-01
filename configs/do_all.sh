@@ -66,6 +66,7 @@ module purge
 ./papi.sh
 ./hwloc.sh
 ./lshw.sh
+./iaca.sh
 
 # HDF5 and NetCDF libraries
 ./szip.sh
@@ -102,23 +103,20 @@ done
 # GNU Linear Programming Kit
 ./glpk.sh
 
-exit 0
-
-./upc.sh
+# Unified Parallel C
+./upc.sh gcc-4.9.2
 
 # -- gperftools (module)
 ./gperftools.sh
 
 # -- IPM (module)
-# ./ploticus.sh
+./ploticus.sh
 # ./ipm.sh
 
+exit 0
 
 # -- Build Julia (module)
 ./julia.sh
-
-# -- Build UPC (module)
-./upc.sh
 
 # -- Numerical frameworks (modules)
 ./petsc.sh
