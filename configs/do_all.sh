@@ -37,6 +37,9 @@ module purge
 ./flex.sh
 ./bison.sh
 
+# Ruby
+./ruby.sh
+
 # Boehm GC
 ./libatomic_ops.sh
 ./gc.sh
@@ -84,7 +87,7 @@ module purge
 ./ploticus.sh
 
 # -- Dyninst (module)
-./dyninst.sh gcc-4.9.2
+#./dyninst.sh gcc-4.9.2
 
 # General support modules (GCC and ICC versions)
 for tc in gcc-4.9.2 icc-15.0.3 ; do
