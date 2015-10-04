@@ -3,10 +3,14 @@
 # PDT
 
 source ./helper.sh $*
-set_stage_dl http://tau.oregon.edu/pdt.tgz
+set_stage_dl http://www.cs.uoregon.edu/research/paracomp/pdtoolkit/Download/pdt-3.20.tar.gz
 
-module load openmpi-1.8.6
-./configure -prefix=$PREFIX/pdt -GNU
-make install -j
+if echo $TOOLCHAIN | grep "icc" ; then
+  CONFIG_FLAGS="--icpc"
+fi
+
+module load openmpi/1.10.0-$TOOLCHAIN
+./configure -prefix=$PREFIX/pdt-3.20-$TOOLCHAIN $CONFIG_FLAGS
+make install 
 
 leave_stage

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Generate METIS modules
+# Generate IPM modules
 #
 cat <<EOF
 #%Module1.0

@@ -3,6 +3,13 @@
 # DynInst
 
 source ./helper.sh $*
-stage_dl_cmake http://www.dyninst.org/sites/default/files/downloads/dyninst/8.2.1/DyninstAPI-8.2.1.tgz \
-    -DBoost_INCLUDE_DIR=$PREFIX/include/
+
+module load libelf/0.163
+module load boost/1.59.0-$TOOLCHAIN
+
+VER=9.0.3
+stage_dl_cmake \
+    http://www.paradyn.org/release$VER/DyninstAPI-$VER.tgz \
+    -DBoost_INCLUDE_DIR=$PREFIX/boost-1.59.0-$TOOLCHAIN/include/ \
+    -DCMAKE_INSTALL_PREFIX=$PREFIX/dyninst-$VER-$TOOLCHAIN 
 

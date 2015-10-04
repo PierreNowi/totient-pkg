@@ -1,4 +1,4 @@
-MDIRS=devtoolset python psxe gcc upc iaca
+MDIRS=devtoolset python psxe gcc upc iaca libelf
 MODULES= \
 	cs5220 \
 	utils \
@@ -9,7 +9,8 @@ MODULES= \
 	psxe/2015 \
 	gcc/5.2.0 \
 	upc/2.20.2 \
-	iaca/2.1
+	iaca/2.1 \
+	libelf/0.163
 
 .PHONY: install build
 
@@ -32,7 +33,9 @@ build:
 	./build.sh eigen $$tc 3.2.5 ; \
 	./build.sh armadillo $$tc 5.200.2 ; \
 	./build.sh gsl $$tc 1.16 ; \
-	./build.sh ipm $$tc ; \
+	./build.sh ipm $$tc latest ; \
+	./build.sh pdt $$tc 3.20 ; \
+	./build.sh tau $$tc latest ; \
 	done
 	./build.sh hdf5   generic 1.8.13 
 	./build.sh netcdf generic 4.3.3.1 

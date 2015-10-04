@@ -3,12 +3,21 @@
 # Tau
 
 source ./helper.sh $*
-set_stage_dl http://tau.oregon.edu/tau.tgz
+set_stage_dl http://www.cs.uoregon.edu/research/paracomp/tau/tauprofile/dist/tau_latest.tar.gz
 
-module load openmpi-1.8.6
-OMPI=$PREFIX/openmpi-1.8.6/
-./configure -prefix=$PREFIX/tau -c++=g++ -cc=gcc -fortran=gnu \
-	-pdt=$PREFIX/pdt -papi=$PREFIX -dyninst=$PREFIX \
+if echo $TOOLCHAIN | grep "icc" ; then
+   CONFIG_FLAGS="-c++=icpc -cc=icc -fortran=intel"
+else
+   CONFIG_FLAGS="-c++=g++ -cc=gcc -fortran=gnu"
+fi
+
+module load pdt/3.20-$TOOLCHAIN
+module load openmpi/1.10.0-$TOOLCHAIN
+OMPI=$PREFIX/openmpi-1.10.0-$TOOLCHAIN/
+./configure -prefix=$PREFIX/tau-$TOOLCHAIN \
+	$CONFIG_FLAGS \
+	-pdt=$PREFIX/pdt-3.20-$TOOLCHAIN -papi=$PREFIX/utils \
+	-dyninst=/opt/rh/devtoolset-3/root/usr/lib64/dyninst/ \
 	-mpi -mpiinc=$OMPI/include -mpilib=$OMPI/lib \
 	-openmp -pthread
 make install
