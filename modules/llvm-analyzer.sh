@@ -12,12 +12,8 @@ proc ModulesHelp { } {
 }
  
 module-whatis "LLVM $VER"
+module load llvm/$VER
 
-set basedir /share/apps/llvm-analyzer-$VER
-setenv LLVM_HOME \$basedir
-prepend-path PATH \$basedir/bin
-prepend-path CPATH \$basedir/include
-prepend-path LIBRARY_PATH \$basedir/lib
-prepend-path LD_RUN_PATH \$basedir/lib
-prepend-path MANPATH \$basedir/man
+set basedir /share/apps/llvm-$VER-analyzer
+prepend-path PATH \$basedir
 EOF
