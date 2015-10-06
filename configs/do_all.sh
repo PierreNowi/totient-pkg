@@ -70,6 +70,7 @@ module purge
 ./hwloc.sh
 ./lshw.sh
 ./iaca.sh
+./maqao.sh
 
 # HDF5 and NetCDF libraries
 ./szip.sh
@@ -85,9 +86,6 @@ module purge
 
 # -- IPM (module)
 ./ploticus.sh
-
-# -- Dyninst (module)
-#./dyninst.sh gcc-4.9.2
 
 # General support modules (GCC and ICC versions)
 for tc in gcc-4.9.2 icc-15.0.3 ; do
@@ -110,7 +108,7 @@ for tc in gcc-4.9.2 icc-15.0.3 ; do
   # Profiling systems
   ./ipm.sh         $tc
   ./pdt.sh         $tc
-  #./tau.sh         $tc
+  ./tau.sh         $tc
 done
 
 # GNU Linear Programming Kit

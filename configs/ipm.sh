@@ -7,7 +7,14 @@
 
 source ./helper.sh $*
 set_stage_dl https://github.com/nerscadmin/IPM.git
-module load openmpi/1.10.0-$TOOLCHAIN
+
+if echo $TOOLCHAIN | grep "icc" ; then
+  export COMPILER=INTEL
+else
+  export COMPILER=GNU
+  module load openmpi/1.10.0-$TOOLCHAIN
+fi
+echo "Compiler: $COMPILER"
 
 patch -p0 < $TOTIENT_PKG/patches/ipm.patch
 set +e
@@ -16,13 +23,6 @@ aclocal
 automake --add-missing
 autoreconf
 set -e
-
-if echo $TOOLCHAIN | grep "icc" ; then
-  export COMPILER=INTEL
-else
-  export COMPILER=GNU
-fi
-echo "Compiler: $COMPILER"
 
 ./configure \
   --with-compiler=$COMPILER \
