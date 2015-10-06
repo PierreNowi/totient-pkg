@@ -1,4 +1,4 @@
-MDIRS=devtoolset python psxe gcc upc iaca maqao libelf
+MDIRS=devtoolset python psxe gcc upc maqao libelf
 MODULES= \
 	cs5220 \
 	utils \
@@ -9,7 +9,6 @@ MODULES= \
 	psxe/2015 \
 	gcc/5.2.0 \
 	upc/2.20.2 \
-	iaca/2.1 \
 	maqao/2.1.1 \
 	libelf/0.163
 

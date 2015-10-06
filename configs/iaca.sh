@@ -3,6 +3,14 @@
 # IACA (Intel Adrchitecture Code Analyzer)
 # Have to make this 
 
+#
+# This looks like a fascinating tool, but it is built for
+# a newer glibc and libstdc++ than is installed on the cluster,
+# and I'm not willing to muck around with binaries to the
+# extent needed to run it.
+#
+exit 0
+
 source ./helper.sh $*
 set_stage
 
