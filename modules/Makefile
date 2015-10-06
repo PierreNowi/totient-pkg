@@ -1,4 +1,4 @@
-MDIRS=devtoolset python psxe gcc upc iaca libelf
+MDIRS=devtoolset python psxe gcc upc iaca maqao libelf
 MODULES= \
 	cs5220 \
 	utils \
@@ -10,6 +10,7 @@ MODULES= \
 	gcc/5.2.0 \
 	upc/2.20.2 \
 	iaca/2.1 \
+	maqao/2.1.1 \
 	libelf/0.163
 
 .PHONY: install build
@@ -42,4 +43,6 @@ build:
 	./build.sh matio  generic 1.5.2 
 	./build.sh llvm   generic 3.6.2
 	./build.sh llvm   generic 3.7.0
+	./build.sh llvm-analyzer generic 3.6.2
+	./build.sh llvm-analyzer generic 3.7.0
 	./build.sh gperftools generic 2.4

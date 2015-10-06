@@ -1,0 +1,12 @@
+#%Module1.0
+proc ModulesHelp { } {
+  global dotversion
+  puts stderr "MAQAO (Modular Assembly Quality Analyzer and Optimizer)"
+}
+ 
+module-whatis "MAQAO (Modular Assembly Quality Analyzer and Optimizer)"
+set basedir /share/apps/maqao-2.1.1
+
+prepend-path PATH $basedir/bin
+prepend-path MANPATH $basedir/man
+
